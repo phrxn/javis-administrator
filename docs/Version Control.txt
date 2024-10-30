@@ -1,0 +1,63 @@
+!!  The key words “MUST” and “OPTIONAL” in this document are to be interpreted as described in
+    RFC 2119. https://www.ietf.org/rfc/rfc2119.txt
+
+!!  The $VERSION in this file is the new version of the program.
+    The version SHOULD NOT start with a lowercase 'v' in the files: Administrator.java and pom.xml
+    Example: 0.0.1-beta
+
+To change de program version:
+
+* Make all changes and make all commits (needed obviously)
+
+* When everything is ready, and the last commit has been made, change $VERSION in: Administrator.java and pom.xml
+
+* Create a folder inside: docs/version with the name $VERSION. Example:
+    - docs/version/0.0.1-beta
+
+* Create a file inside: docs/version/ with the name $VERSION and inside it put all the
+  details of the new version (this is the details file). Example:
+    - docs/version/0.0.1-beta/0.0.1-beta
+  Inside file:
+    - MUST have the header: [JAVIS-ADMINISTRATOR $Version]. Example:
+    	JAVIS-ADMINISTRATOR 0.0.1-beta
+    - OPTIONAL body
+    - MUST have the BREAKING CHANGES and DETAILS footer
+    	- below footer BREAKING CHANGES briefly list each change one below the other starting with: -(space)
+    	- below footer DETAILS detail the changes of the new version
+                    example file:
+      ------------------ THE TEXT EDITOR -------------------
+      |JAVIS-ADMINISTRATOR 0.0.1-beta                      |
+      |                                                    |
+      | ... (OPTIONAL body)                                |
+      |                                                    |
+      |BREAKING CHANGES                                    |
+      |- the login new use the yellow button               |
+      |- added a ping test.                                |
+      |                                                    |
+      |DETAILS                                             |
+      | In this version the button was changed because...  |
+      | The roses are red. In this life foo foo.           |
+      | I love my cat and my dog.                          |
+      | Foo foo foo bla bla                                |
+      ------------------------------------------------------
+
+* Add to git:
+	- the  docs/version/$VERSION/$VERSION file
+	- pom.xml file
+	- Administrator.java file
+
+* Create the commit using: the header, the body and the footer BREAKING CHANGES from the version
+  details file. Commit text example:
+      ------------------ THE TEXT EDITOR -------------------
+      |JAVIS-ADMINISTRATOR 0.0.1-beta                      |
+      |                                                    |
+      | ... (OPTIONAL body)                                |
+      |                                                    |
+      |BREAKING CHANGES                                    |
+      |- the login new use the yellow button               |
+      |- added a ping test.                                |
+      ------------------------------------------------------
+
+* Create a tag in the commit with the version $VERSION
+
+* After this, change the version with some suffix in the pom.xml...

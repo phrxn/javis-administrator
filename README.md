@@ -12,8 +12,9 @@ This program is a GUI that runs on the Desktop, it uses Java swing to render its
 
 | File / Directory | Description |
 | --------- | ----------- |
+| docs/ | Directory containing documents about the project, such as version history. |
 | src/ | The project source code and test files. |
-| output/ | Directory to storage compiled things |
+| output/ | Directory to storage compiled things. |
 | output/bin | Directory to store the compiled project. Within this directory there will be another directory with the program version, and within the program version directory there will be all the files and folders necessary to run the program. |
-| pom.xml | The maven control file |
-| README.md | This file |
+| pom.xml | The maven control file. |
+| README.md | This file. |
