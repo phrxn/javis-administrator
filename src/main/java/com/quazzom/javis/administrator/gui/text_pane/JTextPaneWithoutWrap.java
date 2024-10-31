@@ -1,4 +1,4 @@
-package com.quazzom.javis.administrator.gui.panel;
+package com.quazzom.javis.administrator.gui.text_pane;
 
 import java.awt.Dimension;
 import javax.swing.JTextPane;

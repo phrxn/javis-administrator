@@ -11,7 +11,7 @@
 		<maven.compiler.source>21</maven.compiler.source>
 		<maven.compiler.target>21</maven.compiler.target>
 	</properties>
-	
+
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/org.hamcrest/hamcrest-library -->
 		<dependency>
@@ -28,7 +28,7 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	
+
 	<profiles>
 		<!-- Test only units -->
 		<profile>
@@ -66,46 +66,75 @@
 			</build>
 		</profile>
 	</profiles>
-	
+
 	<build>
 
-	<plugins>
-		<plugin>
-			<!-- The surefire Plugin is used during the TEST phase of the build lifecycle to execute the unit tests of an application. -->
-			<artifactId>maven-surefire-plugin</artifactId>
-			<version>2.22.2</version>
-		</plugin>
+		<plugins>
+			<plugin>
+				<!-- The surefire Plugin is used during the TEST phase of the
+				build lifecycle to execute the unit tests of an application. -->
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.22.2</version>
+			</plugin>
 
-		<plugin>
-			<!-- The Failsafe Plugin is designed to run integration tests while the Surefire Plugin is designed to run unit tests. -->
-			<artifactId>maven-failsafe-plugin</artifactId>
-			<version>2.22.2</version>
-		</plugin>
+			<plugin>
+				<!-- The Failsafe Plugin is designed to run integration tests
+				while the Surefire Plugin is designed to run unit tests. -->
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<version>2.22.2</version>
+			</plugin>
 
-		<plugin>
-			<artifactId>maven-assembly-plugin</artifactId>
-			<configuration>
-				<finalName>${project.artifactId}</finalName>
-				<archive>
-					<manifest>
-						<mainClass>com.quazzom.javis.administrator.Main</mainClass>
-					</manifest>
-				</archive>
-				<descriptorRefs>
-					<descriptorRef>jar-with-dependencies</descriptorRef>
-				</descriptorRefs>
-				<appendAssemblyId>false</appendAssemblyId> <!-- disable jar with depencies -->
-				<outputDirectory>${basedir}/output/binary/${project.version}</outputDirectory>
-			</configuration>
-			<executions>
-				<execution>
-					<phase>package</phase>
-					<goals>
-						<goal>single</goal>
-					</goals>
-				</execution>
-			</executions>
-		</plugin>
-	</plugins>
-</build>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<finalName>${project.artifactId}</finalName>
+					<archive>
+						<manifest>
+							<mainClass>com.quazzom.javis.administrator.Main</mainClass>
+						</manifest>
+					</archive>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+					<appendAssemblyId>false</appendAssemblyId> <!-- disable jar
+					with depencies -->
+					<outputDirectory>${basedir}/output/binary/${project.version}</outputDirectory>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>3.2.0</version>
+				<executions>
+					<execution>
+						<id>copy-configuration-file</id>
+						<phase>package</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>
+								${project.basedir}/output/binary/${project.version}</outputDirectory>
+							<resources>
+								<resource>
+									<directory>${project.basedir}</directory>
+									<includes>
+										<include>configuration.properties</include>
+									</includes>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 </project>

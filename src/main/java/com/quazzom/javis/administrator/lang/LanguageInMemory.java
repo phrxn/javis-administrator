@@ -64,12 +64,30 @@ public class LanguageInMemory extends Language {
         propertiesOutputStreamUncaughtException);
   }
 
+  private static void addJDialogMessages() {
+    Properties propertiesJDialogMessages = new Properties();
+
+    propertiesJDialogMessages.put("JBUTTON_CLOSE", "Close");
+
+    theLanguages.put(LanguagePathToFile.JDIALOG_MESSAGES, propertiesJDialogMessages);
+  }
+
+  private static void addStart() {
+    Properties propertiesStart = new Properties();
+
+    propertiesStart.put(
+        "ERROR_LOAD_CONFIGURATION", "TYPE_MESSAGE_ERROR\tCould not load configuration file");
+    theLanguages.put(LanguagePathToFile.START, propertiesStart);
+  }
+
   static {
     theLanguages = new HashMap<>();
 
     addCopyPopup();
     addJDialogUncaughtException();
     addOutputStreamUncaughtException();
+    addJDialogMessages();
+    addStart();
   }
 
   public LanguageInMemory(LanguagePathToFile languagePathToFile) {
