@@ -1,16 +1,20 @@
 package com.quazzom.javis.administrator.lang;
 
-public enum LanguageIdiom {
+import com.quazzom.javis.administrator.HasValue;
+
+public enum LanguageIdiom implements HasValue {
+  INVALID("?"),
   EN_US("EN_US"),
   PT_BR("PT_BR");
 
-  private String type;
+  private final String variableName;
 
-  private LanguageIdiom(String type) {
-    this.type = type;
+  LanguageIdiom(String variableName) {
+    this.variableName = variableName;
   }
 
-  public String getType() {
-    return type;
+  @Override
+  public String getValue() {
+    return this.variableName;
   }
 }

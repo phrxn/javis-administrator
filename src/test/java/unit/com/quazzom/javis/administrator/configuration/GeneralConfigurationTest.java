@@ -186,7 +186,7 @@ public class GeneralConfigurationTest {
         assertThrows(
             ConfigurationInvalidValueException.class,
             () -> {
-              gc.setLanguageType("");
+              gc.setLanguageIdiom("");
             });
 
     assertEquals("The option LANGUAGE cannot be empty", cive.getMessage());
@@ -200,7 +200,7 @@ public class GeneralConfigurationTest {
         assertThrows(
             ConfigurationInvalidValueException.class,
             () -> {
-              gc.setLanguageType("FOOBAR");
+              gc.setLanguageIdiom("FOOBAR");
             });
 
     assertEquals("FOOBAR is not a valid value for the LANGUAGE option", cive.getMessage());
@@ -212,8 +212,8 @@ public class GeneralConfigurationTest {
 
     assertDoesNotThrow(
         () -> {
-          gc.setLanguageType("EN_US");
-          gc.setLanguageType("PT_BR");
+          gc.setLanguageIdiom("EN_US");
+          gc.setLanguageIdiom("PT_BR");
         });
   }
 

@@ -4,6 +4,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
+import com.quazzom.javis.administrator.HasValue;
+import com.quazzom.javis.administrator.lang.LanguageIdiom;
 
 public class GeneralConfiguration {
 
@@ -94,28 +96,11 @@ public class GeneralConfiguration {
     }
   }
 
-  enum LanguageTypeOptions implements HasValue {
-    INVALID("?"),
-    EN_US("EN_US"),
-    PT_BR("PT_BR");
-
-    private final String variableName;
-
-    LanguageTypeOptions(String variableName) {
-      this.variableName = variableName;
-    }
-
-    @Override
-    public String getValue() {
-      return this.variableName;
-    }
-  }
-
   private ExecutionModeOptions executionMode;
   private EnvironmentModeOptions environmentMode;
   private StorageTypeOptions storageType;
   private AuthenticationTypeOptions authenticationType;
-  private LanguageTypeOptions languageType;
+  private LanguageIdiom languageIdiom;
 
   private InputStream configurationStreamData = null;
 
@@ -234,27 +219,28 @@ public class GeneralConfiguration {
 
   // --------------------------------------------------------------------------------------------
 
-  public LanguageTypeOptions getLanguageType() {
-    return languageType;
+  public LanguageIdiom getLanguageIdiom() {
+    return languageIdiom;
   }
 
-  public void setLanguageType(String languageType) throws ConfigurationInvalidValueException {
+  // LanguageIdiom languageIdiom
+
+  public void setLanguageIdiom(String languageType) throws ConfigurationInvalidValueException {
 
     isStringOptionEmpty(languageType, allValidConfigurationOptions.LANGUAGE);
 
-    isStringOptionValid(
-        languageType, allValidConfigurationOptions.LANGUAGE, LanguageTypeOptions.class);
+    isStringOptionValid(languageType, allValidConfigurationOptions.LANGUAGE, LanguageIdiom.class);
 
-    for (LanguageTypeOptions language : LanguageTypeOptions.values()) {
+    for (LanguageIdiom language : LanguageIdiom.values()) {
       if (language.getValue().equals(languageType)) {
-        setLanguageType(language);
+        setLanguageIdiom(language);
         break;
       }
     }
   }
 
-  public void setLanguageType(LanguageTypeOptions languageType) {
-    this.languageType = languageType;
+  public void setLanguageIdiom(LanguageIdiom languageIdiom) {
+    this.languageIdiom = languageIdiom;
   }
 
   // --------------------------------------------------------------------------------------------
@@ -294,7 +280,7 @@ public class GeneralConfiguration {
     environmentMode = EnvironmentModeOptions.INVALID;
     storageType = StorageTypeOptions.INVALID;
     authenticationType = AuthenticationTypeOptions.INVALID;
-    languageType = LanguageTypeOptions.INVALID;
+    languageIdiom = LanguageIdiom.INVALID;
   }
 
   public boolean isAnyOptionInValid() {
@@ -302,7 +288,7 @@ public class GeneralConfiguration {
         || environmentMode == EnvironmentModeOptions.INVALID
         || storageType == StorageTypeOptions.INVALID
         || authenticationType == AuthenticationTypeOptions.INVALID
-        || languageType == LanguageTypeOptions.INVALID) return true;
+        || languageIdiom == LanguageIdiom.INVALID) return true;
 
     return false;
   }
@@ -324,7 +310,7 @@ public class GeneralConfiguration {
     setAuthenticationType(
         propertiesContainingAllOptions.getProperty(
             allValidConfigurationOptions.AUTHENTICATION.getValue()));
-    setLanguageType(
+    setLanguageIdiom(
         propertiesContainingAllOptions.getProperty(
             allValidConfigurationOptions.LANGUAGE.getValue()));
   }
@@ -349,10 +335,5 @@ public class GeneralConfiguration {
     }
     throw new ConfigurationInvalidValueException(
         String.format("%s is not a valid value for the %s option", value, variable.getValue()));
-  }
-
-  // Interface to ensure Enum has getValue method
-  public interface HasValue {
-    String getValue();
   }
 }

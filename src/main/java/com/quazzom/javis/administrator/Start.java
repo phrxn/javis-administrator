@@ -2,9 +2,11 @@ package com.quazzom.javis.administrator;
 
 import com.quazzom.javis.administrator.configuration.ConfigurationController;
 import com.quazzom.javis.administrator.configuration.ConfigurationViewer;
+import com.quazzom.javis.administrator.configuration.GeneralConfiguration;
 import com.quazzom.javis.administrator.gui.SwingCommons;
 import com.quazzom.javis.administrator.gui.dialog.JDialogType;
 import com.quazzom.javis.administrator.gui.frame.AdministratorFrame;
+import com.quazzom.javis.administrator.lang.LanguageFactory;
 import com.quazzom.javis.administrator.lang.LanguageInMemory;
 import com.quazzom.javis.administrator.lang.LanguagePathToFile;
 import com.quazzom.javis.administrator.lang.Text;
@@ -14,6 +16,7 @@ import com.quazzom.javis.administrator.uncaught_exceptions.OutputStreamUncaughtE
 
 public class Start implements ConfigurationViewer {
 
+  private GeneralConfiguration generalConfiguration;
   private ConfigurationController configurationController;
   private AdministratorFrame administratorFrame;
   private SwingCommons swingCommons;
@@ -21,7 +24,8 @@ public class Start implements ConfigurationViewer {
 
   public Start() {
     administratorFrame = new AdministratorFrame();
-    configurationController = new ConfigurationController(this);
+    generalConfiguration = new GeneralConfiguration();
+    configurationController = new ConfigurationController(generalConfiguration, this);
     swingCommons = new SwingCommons();
     this.text = new LanguageInMemory(LanguagePathToFile.START);
   }
@@ -49,6 +53,10 @@ public class Start implements ConfigurationViewer {
    */
   private boolean loadConfiguration() {
     return configurationController.loadConfigurationFile();
+  }
+
+  private void configureLanguageFactory(GeneralConfiguration gc) {
+    LanguageFactory.setLanguageIdiom(gc.getLanguageIdiom());
   }
 
   @Override

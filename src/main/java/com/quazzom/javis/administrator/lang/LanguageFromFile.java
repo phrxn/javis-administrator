@@ -30,10 +30,10 @@ public class LanguageFromFile extends Language {
   }
 
   public String createPathToLanguageFile(
-      LanguageIdiom languageType, LanguagePathToFile languagePathToFile) {
+      LanguageIdiom languageIdiom, LanguagePathToFile languagePathToFile) {
     StringBuilder sb = new StringBuilder();
     sb.append(FOLDER_TO_LANGUAGES)
-        .append(languageType.getType())
+        .append(languageIdiom.getValue())
         .append("/")
         .append(languagePathToFile.getPath());
 

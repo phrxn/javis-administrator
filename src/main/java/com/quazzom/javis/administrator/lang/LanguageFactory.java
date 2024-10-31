@@ -23,7 +23,7 @@ public class LanguageFactory {
     LanguageFactory.languageFrom = languageFrom;
   }
 
-  public static void setLanguageType(LanguageIdiom languageType) {
+  public static void setLanguageIdiom(LanguageIdiom languageType) {
     LanguageFactory.languageType = languageType;
   }
 }
