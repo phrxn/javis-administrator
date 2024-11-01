@@ -10,6 +10,8 @@ import com.quazzom.javis.administrator.lang.LanguageFactory;
 import com.quazzom.javis.administrator.lang.LanguageInMemory;
 import com.quazzom.javis.administrator.lang.LanguagePathToFile;
 import com.quazzom.javis.administrator.lang.Text;
+import com.quazzom.javis.administrator.lang.TextKeyDoesntExist;
+import com.quazzom.javis.administrator.uncaught_exceptions.CreatePermanentUnhandledExceptionHandler;
 import com.quazzom.javis.administrator.uncaught_exceptions.DefaultUncaughtExceptionHandler;
 import com.quazzom.javis.administrator.uncaught_exceptions.JDialogUncaughtException;
 import com.quazzom.javis.administrator.uncaught_exceptions.OutputStreamUncaughtException;
@@ -35,6 +37,10 @@ public class Start implements ConfigurationViewer {
 
     // If the configuration file isn't loaded there is no way to proceed, so return...
     if (!loadConfiguration()) return;
+
+    configureLanguageFactory(generalConfiguration);
+
+    if (!setNewDefaultUncaughtExceptionHandler()) return;
   }
 
   private void setStartDefaultUncaughtExceptionHandler() {
@@ -57,6 +63,24 @@ public class Start implements ConfigurationViewer {
 
   private void configureLanguageFactory(GeneralConfiguration gc) {
     LanguageFactory.setLanguageIdiom(gc.getLanguageIdiom());
+  }
+
+  private boolean setNewDefaultUncaughtExceptionHandler() {
+    CreatePermanentUnhandledExceptionHandler cpue =
+        new CreatePermanentUnhandledExceptionHandler(generalConfiguration);
+
+    try {
+      cpue.create();
+      return true;
+    } catch (TextKeyDoesntExist e) {
+      swingCommons.showJDialogMessage(
+          administratorFrame,
+          JDialogType.ERROR,
+          text.getText("ERROR_SET_NEW_UNCAUGHT_EXCEPTION_HANDLER"),
+          e.getMessage(),
+          new LanguageInMemory(LanguagePathToFile.JDIALOG_MESSAGES));
+    }
+    return false;
   }
 
   @Override

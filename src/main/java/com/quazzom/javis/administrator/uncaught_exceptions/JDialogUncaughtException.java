@@ -56,10 +56,12 @@ public class JDialogUncaughtException extends JDialog implements UncaughtExcepti
 
   //
   public JDialogUncaughtException() {
-    this(new LanguageInMemory(LanguagePathToFile.JDIALOG_UNCAUGHT_EXCEPTION));
+    this(
+        new LanguageInMemory(LanguagePathToFile.JDIALOG_UNCAUGHT_EXCEPTION),
+        new LanguageInMemory(LanguagePathToFile.COPY_POPUP));
   }
 
-  public JDialogUncaughtException(Text textLanguage) {
+  public JDialogUncaughtException(Text textLanguage, Text copyPopMenuLanguage) {
 
     super((Frame) null, true);
 
@@ -76,7 +78,7 @@ public class JDialogUncaughtException extends JDialog implements UncaughtExcepti
     jTextPaneException.setEditable(false);
     final JScrollPane JScrollPanelExceptionDetails = new JScrollPane(jTextPaneException);
     JScrollPanelExceptionDetails.setPreferredSize(new Dimension(0, 100));
-    new CopyPopup(jTextPaneException, new LanguageInMemory(LanguagePathToFile.COPY_POPUP));
+    new CopyPopup(jTextPaneException, copyPopMenuLanguage);
 
     jButtonClose = new JButton();
     jButtonClose.addActionListener(

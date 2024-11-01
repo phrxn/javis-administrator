@@ -8,8 +8,8 @@ public class LanguageFromFile extends Language {
 
   private static final String FOLDER_TO_LANGUAGES = "lang/";
 
-  public LanguageFromFile(LanguageIdiom languageType, LanguagePathToFile languagePathToFile) {
-    loadPropertiesFromFile(languageType, languagePathToFile);
+  public LanguageFromFile(LanguageIdiom languageIdiom, LanguagePathToFile languagePathToFile) {
+    loadPropertiesFromFile(languageIdiom, languagePathToFile);
   }
 
   public LanguageFromFile(Properties propertiesTexts) {
@@ -17,9 +17,9 @@ public class LanguageFromFile extends Language {
   }
 
   public void loadPropertiesFromFile(
-      LanguageIdiom languageType, LanguagePathToFile languagePathToFile) {
+      LanguageIdiom languageIdiom, LanguagePathToFile languagePathToFile) {
 
-    String pathToLanguageFile = createPathToLanguageFile(languageType, languagePathToFile);
+    String pathToLanguageFile = createPathToLanguageFile(languageIdiom, languagePathToFile);
 
     try {
       FileInputStream fileLanguage = new FileInputStream(pathToLanguageFile);

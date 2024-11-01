@@ -77,6 +77,9 @@ public class LanguageInMemory extends Language {
 
     propertiesStart.put(
         "ERROR_LOAD_CONFIGURATION", "TYPE_MESSAGE_ERROR\tCould not load configuration file");
+    propertiesStart.put(
+        "ERROR_SET_NEW_UNCAUGHT_EXCEPTION_HANDLER",
+        "TYPE_MESSAGE_ERROR\tCannot set new error handler");
     theLanguages.put(LanguagePathToFile.START, propertiesStart);
   }
 
