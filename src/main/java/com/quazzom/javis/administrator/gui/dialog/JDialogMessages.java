@@ -85,6 +85,9 @@ public class JDialogMessages extends JDialogDefault implements ActionListener {
     jPanelRoot.add(jPanelAllInformations, BorderLayout.CENTER);
     jPanelRoot.add(jPanelBottomButtons, BorderLayout.PAGE_END);
 
+    getRootPane().setDefaultButton(jButtonClose);
+    jButtonClose.requestFocusInWindow();
+
     setContentPane(jPanelRoot);
     setVisible(true);
   }

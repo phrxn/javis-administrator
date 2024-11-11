@@ -3,8 +3,13 @@ package com.quazzom.javis.administrator.gui.frame;
 import java.awt.Dimension;
 import java.awt.GraphicsEnvironment;
 import java.awt.Rectangle;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import javax.swing.JDesktopPane;
 import javax.swing.JFrame;
+import com.quazzom.javis.administrator.configuration.GeneralConfiguration;
 import com.quazzom.javis.administrator.gui.SwingCommons;
+import com.quazzom.javis.administrator.gui.SwingMediator;
 
 public class AdministratorFrame extends JFrame {
 
@@ -23,6 +28,10 @@ public class AdministratorFrame extends JFrame {
 
   private SwingCommons swingCommons;
 
+  private JDesktopPane jDesktopPane;
+
+  private SwingMediator swingMediator;
+
   public AdministratorFrame() {
 
     swingCommons = new SwingCommons();
@@ -31,11 +40,28 @@ public class AdministratorFrame extends JFrame {
   }
 
   private void startTheFrameGUIThings() {
+
+    jDesktopPane = new JDesktopPane();
+    add(jDesktopPane);
+
+    addWindowListener(new JFrameControl());
     setTitle(swingCommons.createTitle());
     setBounds(SCREEN_SIZE);
     setMinimumSize(FRAME_MINIMUM_SIZE);
     setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
-    setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
     setVisible(true);
+  }
+
+  public void startGUIProgram(GeneralConfiguration generalConfiguration) {
+    swingMediator = new SwingMediator(generalConfiguration, this, jDesktopPane);
+    swingMediator.showLoginInternalFrame();
+  }
+
+  class JFrameControl extends WindowAdapter {
+    @Override
+    public void windowClosing(WindowEvent e) {
+      swingMediator.showExitProgram();
+    }
   }
 }

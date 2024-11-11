@@ -29,7 +29,7 @@ public class GeneralConfiguration {
     }
   }
 
-  enum ExecutionModeOptions implements HasValue {
+  public enum ExecutionModeOptions implements HasValue {
     INVALID("?"),
     NORMAL("NORMAL"),
     DEMO("DEMO");

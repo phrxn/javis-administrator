@@ -27,6 +27,23 @@
 			<version>5.7.2</version>
 			<scope>test</scope>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.mockito/mockito-core -->
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>4.9.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- it's needed to make the ExtendWith annotation work with mockito -->
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-junit-jupiter</artifactId>
+			<version>4.9.0</version>
+			<scope>test</scope>
+		</dependency>
+
 	</dependencies>
 
 	<profiles>

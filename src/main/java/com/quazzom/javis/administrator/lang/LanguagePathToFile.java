@@ -7,7 +7,12 @@ public enum LanguagePathToFile {
   OUTPUT_STREAM_UNCAUGHT_EXCEPTION(
       "administrator/uncaught_exceptions/OutputStreamUncaughtException.properties"),
   JDIALOG_MESSAGES("administrator/gui/dialog/JDialogMessages.properties"),
-  START("administrator/Start.properties");
+  JDIALOG_QUESTIONS("administrator/gui/dialog/JDialogQuestions.properties"),
+  START("administrator/Start.properties"),
+  AUTHENTICATION_DEMO("administrator/authentication/AuthenticationDemo.properties"),
+  LOGIN_INTERNAL_FRAME("administrator/gui/internal_frame/LoginInternalFrame.properties"),
+  SWING_EXIT_PROGRAM("administrator/gui/SwingExitProgram.properties"),
+  SWING_MAKE_LOGIN("administrator/gui/SwingMakeLogin.properties");
 
   private String path;
 

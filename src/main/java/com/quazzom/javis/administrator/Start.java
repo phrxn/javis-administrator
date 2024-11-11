@@ -7,6 +7,7 @@ import com.quazzom.javis.administrator.gui.SwingCommons;
 import com.quazzom.javis.administrator.gui.dialog.JDialogType;
 import com.quazzom.javis.administrator.gui.frame.AdministratorFrame;
 import com.quazzom.javis.administrator.lang.LanguageFactory;
+import com.quazzom.javis.administrator.lang.LanguageFactory.LanguageFrom;
 import com.quazzom.javis.administrator.lang.LanguageInMemory;
 import com.quazzom.javis.administrator.lang.LanguagePathToFile;
 import com.quazzom.javis.administrator.lang.Text;
@@ -41,6 +42,9 @@ public class Start implements ConfigurationViewer {
     configureLanguageFactory(generalConfiguration);
 
     if (!setNewDefaultUncaughtExceptionHandler()) return;
+    
+    administratorFrame.startGUIProgram(generalConfiguration);
+    
   }
 
   private void setStartDefaultUncaughtExceptionHandler() {
@@ -63,6 +67,7 @@ public class Start implements ConfigurationViewer {
 
   private void configureLanguageFactory(GeneralConfiguration gc) {
     LanguageFactory.setLanguageIdiom(gc.getLanguageIdiom());
+    LanguageFactory.setLanguageFrom(LanguageFrom.FILE);
   }
 
   private boolean setNewDefaultUncaughtExceptionHandler() {

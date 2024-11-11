@@ -1,11 +1,16 @@
 package com.quazzom.javis.administrator.gui;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.FutureTask;
+import java.util.concurrent.RunnableFuture;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 import com.quazzom.javis.administrator.Administrator;
 import com.quazzom.javis.administrator.AdministratorSingleton;
 import com.quazzom.javis.administrator.gui.dialog.JDialogMessages;
+import com.quazzom.javis.administrator.gui.dialog.JDialogQuestions;
 import com.quazzom.javis.administrator.gui.dialog.JDialogType;
 import com.quazzom.javis.administrator.lang.Text;
 
@@ -60,5 +65,40 @@ public class SwingCommons {
         () -> {
           new JDialogMessages(parentFrame, type, title, messageToShow, jDialogTextLanguage);
         });
+  }
+
+  /**
+   * @param parentFrame
+   * @param jQuestionTextLanguage
+   * @param message
+   * @param options
+   * @param defaultOption
+   * @return the index of the chosen string from the 'options' array. The first value is 0
+   */
+  public int showJDialogQuestion(
+      JFrame parentFrame,
+      Text jQuestionTextLanguage,
+      String message,
+      String options[],
+      int defaultOption) {
+
+    RunnableFuture<Integer> getInt =
+        new FutureTask<Integer>(
+            new Callable<Integer>() {
+
+              @Override
+              public Integer call() throws Exception {
+                JDialogQuestions jq = new JDialogQuestions(parentFrame, jQuestionTextLanguage);
+                return jq.showChoose(message, options, defaultOption);
+              }
+            });
+
+    invokeAndWait(getInt);
+
+    try {
+      return getInt.get();
+    } catch (ExecutionException | InterruptedException e) {
+      throw new RuntimeException(e);
+    }
   }
 }
