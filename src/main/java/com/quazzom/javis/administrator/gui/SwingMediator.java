@@ -1,5 +1,6 @@
 package com.quazzom.javis.administrator.gui;
 
+import java.beans.PropertyVetoException;
 import javax.swing.JDesktopPane;
 import javax.swing.JFrame;
 import com.quazzom.javis.administrator.configuration.GeneralConfiguration;
@@ -36,9 +37,18 @@ public class SwingMediator {
     int y = (jDesktopPane.getHeight() - loginInternalFrame.getHeight()) / 2;
 
     loginInternalFrame.setLocation(x, y);
-
     loginInternalFrame.setVisible(true);
+
     jDesktopPane.add(loginInternalFrame);
+
+    loginInternalFrame.toFront();
+    try {
+      loginInternalFrame.setSelected(true);
+    } catch (PropertyVetoException e) {
+      throw new RuntimeException(e);
+    }
+    loginInternalFrame.requestFocusInWindow();
+    loginInternalFrame.setFocusOnJTextFiedUsername();
   }
 
   public void showExitProgram() {

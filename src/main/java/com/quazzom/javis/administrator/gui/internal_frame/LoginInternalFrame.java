@@ -118,6 +118,10 @@ public class LoginInternalFrame extends RootInternalFrame {
             "JLABEL_VERSION", AdministratorSingleton.getInstance().getProgramVersion()));
   }
 
+  public void setFocusOnJTextFiedUsername() {
+    jTextFiedUsername.requestFocusInWindow();
+  }
+
   private class ButtonsControl extends AbstractAction {
 
     @Override
