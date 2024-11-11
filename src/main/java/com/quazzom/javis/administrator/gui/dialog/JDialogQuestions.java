@@ -4,7 +4,12 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Font;
+import java.awt.Image;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -33,7 +38,6 @@ public class JDialogQuestions {
   }
 
   private void startGUI() {
-
     jPanelRoot = new JPanel();
     jPanelRoot.setLayout(new BorderLayout());
     jPanelRoot.setBackground(new Color(255, 25, 88));
@@ -56,29 +60,80 @@ public class JDialogQuestions {
   }
 
   /**
-   * shows an OptionDialog to the user with a list of options, and returns the index of the
+   * Shows an OptionDialog to the user with a list of options, and returns the index of the
    * collected option, counted from 0, or -1 if the user does not choose any option.
    *
    * @param message a message to show to the user
-   * @param options a array with options MUST HAVE at least one item
-   * @param defaultOption a index to default option
+   * @param options an array with options MUST HAVE at least one item
+   * @param defaultOption an index to default option
    * @return the index of the chosen option or -1 if no option was chosen
    */
-  public int showChoose(String message, String options[], int defaultOption) {
+  public int showChoose(String message, Image imageIcon, String options[], int defaultOption) {
 
     jPanelAllInformations.appendText(message);
 
-    int result =
-        JOptionPane.showOptionDialog(
-            parent,
+    JOptionPane optionPane =
+        new JOptionPane(
             jPanelRoot,
-            AdministratorSingleton.getInstance().getProgramName(),
             JOptionPane.DEFAULT_OPTION,
             JOptionPane.PLAIN_MESSAGE,
             null,
             options,
             options[defaultOption]);
 
-    return result;
+    JDialog dialog =
+        optionPane.createDialog(parent, AdministratorSingleton.getInstance().getProgramName());
+
+    JPanel buttonPanel = (JPanel) optionPane.getComponent(1);
+    JButton defaultButton = (JButton) buttonPanel.getComponent(defaultOption);
+
+    dialog.getRootPane().setDefaultButton(defaultButton);
+
+    for (int i = 0; i < options.length; i++) {
+      JButton button = (JButton) buttonPanel.getComponent(i);
+      String option = options[i];
+
+      button.addActionListener(
+          e -> {
+            optionPane.setValue(option);
+            dialog.dispose();
+          });
+
+      button.addKeyListener(
+          new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+              if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+                optionPane.setValue(option);
+                dialog.dispose();
+              }
+            }
+          });
+    }
+
+    dialog.addKeyListener(
+        new KeyAdapter() {
+          @Override
+          public void keyPressed(KeyEvent e) {
+            if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+              JButton focusedButton = (JButton) dialog.getRootPane().getDefaultButton();
+              focusedButton.doClick();
+            }
+          }
+        });
+
+    dialog.setIconImage(imageIcon);
+    dialog.setVisible(true);
+
+    optionPane.selectInitialValue();
+    dialog.dispose();
+
+    Object selectedValue = optionPane.getValue();
+
+    if (selectedValue == null) return JOptionPane.CLOSED_OPTION;
+    for (int counter = 0, maxCounter = options.length; counter < maxCounter; counter++) {
+      if (options[counter].equals(selectedValue)) return counter;
+    }
+    return JOptionPane.CLOSED_OPTION;
   }
 }
