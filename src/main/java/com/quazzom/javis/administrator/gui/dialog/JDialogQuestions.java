@@ -73,11 +73,12 @@ public class JDialogQuestions {
             parent,
             jPanelRoot,
             AdministratorSingleton.getInstance().getProgramName(),
-            JOptionPane.YES_NO_CANCEL_OPTION,
+            JOptionPane.DEFAULT_OPTION,
             JOptionPane.PLAIN_MESSAGE,
             null,
             options,
             options[defaultOption]);
+
     return result;
   }
 }
