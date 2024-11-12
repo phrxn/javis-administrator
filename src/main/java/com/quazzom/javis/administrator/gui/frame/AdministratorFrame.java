@@ -58,7 +58,7 @@ public class AdministratorFrame extends JFrame {
   public void startGUIProgram(GeneralConfiguration generalConfiguration) {
     swingMediator = new SwingMediator(generalConfiguration, this, jDesktopPane);
     swingMediator.showLoginInternalFrame();
-    setIconImage(SwingImages.getImage(ImagePathToFile.ICON_JAVIS_16_X16));
+    setIconImage(SwingImages.getImage(ImagePathToFile.ICON_JAVIS_64_X_64));
   }
 
   class JFrameControl extends WindowAdapter {

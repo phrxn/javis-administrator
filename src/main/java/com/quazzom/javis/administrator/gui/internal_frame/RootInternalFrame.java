@@ -22,6 +22,6 @@ public class RootInternalFrame extends JInternalFrame {
       SwingMediator swingMediator) {
     super(title, resizable, closable, maximizable, iconifiable);
 
-    setFrameIcon(SwingImages.getImageIcon(ImagePathToFile.ICON_JAVIS_16_X16));
+    setFrameIcon(SwingImages.getImageIcon(ImagePathToFile.ICON_JAVIS_16_X_16));
   }
 }

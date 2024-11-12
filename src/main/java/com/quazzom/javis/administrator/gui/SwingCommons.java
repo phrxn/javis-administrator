@@ -28,7 +28,7 @@ public class SwingCommons {
 
   public SwingCommons(Administrator administrator) {
     this.administrator = administrator;
-    imageProgramIcon16x16 = SwingImages.getImageIcon(ImagePathToFile.ICON_JAVIS_16_X16);
+    imageProgramIcon16x16 = SwingImages.getImageIcon(ImagePathToFile.ICON_JAVIS_16_X_16);
   }
 
   public String createTitle() {
