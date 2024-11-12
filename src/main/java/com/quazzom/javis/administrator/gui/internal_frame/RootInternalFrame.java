@@ -7,8 +7,6 @@ import com.quazzom.javis.administrator.images.SwingImages;
 
 public class RootInternalFrame extends JInternalFrame {
 
-  private SwingMediator swingMediator;
-
   public RootInternalFrame(SwingMediator swingMediator) {
     this("", true, true, true, false, swingMediator);
   }

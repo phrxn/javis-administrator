@@ -94,6 +94,7 @@ public class LoginInternalFrame extends RootInternalFrame {
 
     setTitle(language.getText("TITLE"));
     setSize(390, 233);
+    putClientProperty("dragMode", "fixed");
 
     addEventEnter();
     setLanguage();

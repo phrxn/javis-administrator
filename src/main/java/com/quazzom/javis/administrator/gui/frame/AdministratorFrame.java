@@ -10,6 +10,7 @@ import javax.swing.JFrame;
 import com.quazzom.javis.administrator.configuration.GeneralConfiguration;
 import com.quazzom.javis.administrator.gui.SwingCommons;
 import com.quazzom.javis.administrator.gui.SwingMediator;
+import com.quazzom.javis.administrator.gui.desktop_pane.AdministratorDesktopPane;
 import com.quazzom.javis.administrator.images.ImagePathToFile;
 import com.quazzom.javis.administrator.images.SwingImages;
 
@@ -43,7 +44,7 @@ public class AdministratorFrame extends JFrame {
 
   private void startTheFrameGUIThings() {
 
-    jDesktopPane = new JDesktopPane();
+    jDesktopPane = new AdministratorDesktopPane();
     add(jDesktopPane);
 
     addWindowListener(new JFrameControl());
