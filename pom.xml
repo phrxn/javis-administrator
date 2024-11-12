@@ -150,6 +150,40 @@
 							</resources>
 						</configuration>
 					</execution>
+					<execution>
+						<id>copy-images-folder</id>
+						<phase>package</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>
+								${project.basedir}/output/binary/${project.version}/images</outputDirectory>
+							<resources>
+								<resource>
+									<directory>${project.basedir}/images</directory>
+									<filtering>false</filtering>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+					<execution>
+						<id>copy-lang-folder</id>
+						<phase>package</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>
+								${project.basedir}/output/binary/${project.version}/lang</outputDirectory>
+							<resources>
+								<resource>
+									<directory>${project.basedir}/lang</directory>
+									<filtering>false</filtering>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
 				</executions>
 			</plugin>
 		</plugins>
