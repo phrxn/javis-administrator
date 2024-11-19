@@ -49,8 +49,7 @@ public class LoginInternalFrame extends RootInternalFrame {
         false, // resizable
         false, // closable
         false, // maximizable
-        false, // iconifiable
-        swingMediator);
+        false); // iconifiable
 
     this.swingMediator = swingMediator;
     this.language = LanguageFactory.getLanguage(LanguagePathToFile.LOGIN_INTERNAL_FRAME);
@@ -84,7 +83,7 @@ public class LoginInternalFrame extends RootInternalFrame {
 
     jButtonCancel = new JButton();
     jButtonCancel.addActionListener(buttonsControl);
-    jButtonCancel.setBounds(254, 111, 89, 35);
+    jButtonCancel.setBounds(243, 111, 100, 35);
     jPanelRoot.add(jButtonCancel);
 
     jLabelVersion = new JLabel();

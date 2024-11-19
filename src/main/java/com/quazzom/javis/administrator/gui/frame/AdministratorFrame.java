@@ -68,4 +68,5 @@ public class AdministratorFrame extends JFrame {
       swingMediator.showExitProgram();
     }
   }
+  
 }

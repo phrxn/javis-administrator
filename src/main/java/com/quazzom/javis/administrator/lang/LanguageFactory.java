@@ -1,5 +1,7 @@
 package com.quazzom.javis.administrator.lang;
 
+import java.util.HashMap;
+
 public class LanguageFactory {
 
   public enum LanguageFrom {
@@ -10,13 +12,26 @@ public class LanguageFactory {
   private static LanguageFrom languageFrom = LanguageFrom.MEMORY;
   private static LanguageIdiom languageType = LanguageIdiom.EN_US;
 
+  private static HashMap<LanguagePathToFile, Language> mapLanguage =
+      new HashMap<LanguagePathToFile, Language>();
+
   private LanguageFactory() {}
 
   public static Language getLanguage(LanguagePathToFile languagePathToFile) {
-    if (languageFrom == LanguageFrom.MEMORY) {
-      return new LanguageInMemory(languagePathToFile);
+
+    Language language;
+
+    if (mapLanguage.containsKey(languagePathToFile)) {
+      return mapLanguage.get(languagePathToFile);
     }
-    return new LanguageFromFile(languageType, languagePathToFile);
+
+    if (languageFrom == LanguageFrom.MEMORY) {
+      language = new LanguageInMemory(languagePathToFile);
+    } else {
+      language = new LanguageFromFile(languageType, languagePathToFile);
+    }
+    mapLanguage.put(languagePathToFile, language);
+    return language;
   }
 
   public static void setLanguageFrom(LanguageFrom languageFrom) {

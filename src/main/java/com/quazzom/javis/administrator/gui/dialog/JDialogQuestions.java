@@ -18,10 +18,10 @@ import com.quazzom.javis.administrator.AdministratorSingleton;
 import com.quazzom.javis.administrator.gui.panel.JPanelTextPaneWithoutWrap;
 import com.quazzom.javis.administrator.lang.Text;
 
-public class JDialogQuestions {
+public class JDialogQuestions extends JDialogDefault{
 
   private JPanel jPanelMain;
-  private JLabel jLableBugImageAndType;
+  private JLabel jLableYouWish;
 
   private JPanel jPanelRoot;
 
@@ -32,6 +32,7 @@ public class JDialogQuestions {
   private Text text;
 
   public JDialogQuestions(JFrame parent, Text text) {
+	super(parent, true);
     this.parent = parent;
     this.text = text;
     startGUI();
@@ -42,15 +43,15 @@ public class JDialogQuestions {
     jPanelRoot.setLayout(new BorderLayout());
     jPanelRoot.setBackground(new Color(255, 25, 88));
 
-    jLableBugImageAndType = new JLabel();
-    jLableBugImageAndType.setIcon(JDialogType.QUESTION.getIcon());
-    jLableBugImageAndType.setFont(new Font("Arial", Font.PLAIN, 16));
-    jLableBugImageAndType.setText(text.getText("JLABEL_BUG_IMAGE_AND_TYPE")); // You Wish
+    jLableYouWish = new JLabel();
+    jLableYouWish.setIcon(JDialogType.QUESTION.getIcon());
+    jLableYouWish.setFont(new Font("Arial", Font.PLAIN, 16));
+    jLableYouWish.setText(text.getText("JLABEL_YOU_WISH")); // You Wish
 
     jPanelMain = new JPanel();
     jPanelMain.setBackground(new Color(200, 255, 200));
     jPanelMain.setLayout(new FlowLayout(FlowLayout.LEFT, 12, 12));
-    jPanelMain.add(jLableBugImageAndType);
+    jPanelMain.add(jLableYouWish);
     jPanelMain.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
 
     jPanelAllInformations = new JPanelTextPaneWithoutWrap();
@@ -82,7 +83,7 @@ public class JDialogQuestions {
             options[defaultOption]);
 
     JDialog dialog =
-        optionPane.createDialog(parent, AdministratorSingleton.getInstance().getProgramName());
+        optionPane.createDialog(parent, getTitle());
 
     JPanel buttonPanel = (JPanel) optionPane.getComponent(1);
     JButton defaultButton = (JButton) buttonPanel.getComponent(defaultOption);

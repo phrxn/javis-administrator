@@ -33,7 +33,7 @@ public class JDialogMessages extends JDialogDefault implements ActionListener {
   private Image imageIcon;
 
   public JDialogMessages() {
-    this(null, JDialogType.INFO, "", "");
+    this(null, JDialogType.INFO, "the title", "message");
   }
 
   public JDialogMessages(JFrame parent, JDialogType type, String title, String messageToShow) {
@@ -48,7 +48,6 @@ public class JDialogMessages extends JDialogDefault implements ActionListener {
   public JDialogMessages(
       JFrame parent, JDialogType type, String title, String messageToShow, Text text) {
     this(parent, null, type, title, messageToShow, text);
-    startGUI();
   }
 
   public JDialogMessages(

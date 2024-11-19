@@ -42,9 +42,8 @@ public class Start implements ConfigurationViewer {
     configureLanguageFactory(generalConfiguration);
 
     if (!setNewDefaultUncaughtExceptionHandler()) return;
-    
+
     administratorFrame.startGUIProgram(generalConfiguration);
-    
   }
 
   private void setStartDefaultUncaughtExceptionHandler() {

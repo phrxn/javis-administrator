@@ -11,12 +11,12 @@ public class JDialogDefault extends JDialog {
 
   private SwingCommons swingCommons;
 
-  public JDialogDefault(JFrame jframePai, boolean isModal) {
-    super(jframePai, isModal);
+  public JDialogDefault(JFrame jFrameParent, boolean isModal) {
+    super(jFrameParent, isModal);
     swingCommons = new SwingCommons();
     setResizable(false);
     setSize(new Dimension(680, 300));
     setTitle(swingCommons.createTitle());
-    setLocationRelativeTo(jframePai);
+    setLocationRelativeTo(jFrameParent);
   }
 }

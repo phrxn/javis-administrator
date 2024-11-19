@@ -22,10 +22,9 @@ public class JPanelTextPaneWithoutWrap extends JPanel {
 
     jTextPaneExceptionMessage = new JTextPaneWithoutWrap();
     jTextPaneExceptionMessage.setEditable(false);
-    jTextPaneExceptionMessage.setFocusable(false);
-
     jTextPaneExceptionMessage.setBackground(getBackground());
     final JScrollPane jScrollPanelexception = new JScrollPane(jTextPaneExceptionMessage);
+
     new CopyPopup(jTextPaneExceptionMessage);
 
     GroupLayout groupLayout = new GroupLayout(this);

@@ -100,8 +100,7 @@ public class SwingCommons {
               @Override
               public Integer call() throws Exception {
                 JDialogQuestions jq = new JDialogQuestions(parentFrame, jQuestionTextLanguage);
-                return jq.showChoose(
-                    message, imageProgramIcon16x16.getImage(), options, defaultOption);
+                return jq.showChoose(message, imageProgramIcon16x16.getImage(), options, defaultOption);
               }
             });
 

@@ -44,6 +44,13 @@
 			<scope>test</scope>
 		</dependency>
 
+		<dependency>
+			<groupId>com.microsoft.sqlserver</groupId>
+			<artifactId>mssql-jdbc</artifactId>
+			<version>12.8.1.jre11</version>
+		</dependency>
+
+
 	</dependencies>
 
 	<profiles>
@@ -179,6 +186,23 @@
 							<resources>
 								<resource>
 									<directory>${project.basedir}/lang</directory>
+									<filtering>false</filtering>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+					<execution>
+						<id>copy-config-folder</id>
+						<phase>package</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>
+								${project.basedir}/output/binary/${project.version}/config</outputDirectory>
+							<resources>
+								<resource>
+									<directory>${project.basedir}/config</directory>
 									<filtering>false</filtering>
 								</resource>
 							</resources>

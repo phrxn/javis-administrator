@@ -46,7 +46,7 @@ public class GeneralConfiguration {
     }
   }
 
-  enum EnvironmentModeOptions implements HasValue {
+  public enum EnvironmentModeOptions implements HasValue {
     INVALID("?"),
     PRODUCTION("PRODUCTION"),
     TEST("TEST");
