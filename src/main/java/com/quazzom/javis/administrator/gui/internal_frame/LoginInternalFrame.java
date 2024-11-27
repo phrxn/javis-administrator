@@ -13,6 +13,8 @@ import javax.swing.SwingConstants;
 import com.quazzom.javis.administrator.AdministratorSingleton;
 import com.quazzom.javis.administrator.configuration.GeneralConfiguration;
 import com.quazzom.javis.administrator.gui.SwingMediator;
+import com.quazzom.javis.administrator.images.ImagePathToFile;
+import com.quazzom.javis.administrator.images.SwingImages;
 import com.quazzom.javis.administrator.lang.LanguageFactory;
 import com.quazzom.javis.administrator.lang.LanguagePathToFile;
 import com.quazzom.javis.administrator.lang.Text;
@@ -91,8 +93,14 @@ public class LoginInternalFrame extends RootInternalFrame {
     jLabelVersion.setBounds(215, 0, 159, 14);
     jPanelRoot.add(jLabelVersion);
 
+    JLabel jLabelJavisLogo = new JLabel("");
+    jLabelJavisLogo.setIcon(SwingImages.getImageIcon(ImagePathToFile.JAVIS_LOGO_FULL_250_X_57));
+
+    jLabelJavisLogo.setBounds(70, 167, 250, 57);
+    jPanelRoot.add(jLabelJavisLogo);
+
     setTitle(language.getText("TITLE"));
-    setSize(390, 233);
+    setSize(390, 280);
     putClientProperty("dragMode", "fixed");
 
     addEventEnter();
