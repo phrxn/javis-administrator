@@ -2,6 +2,9 @@ package com.quazzom.javis.administrator.gui.table;
 
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.Toolkit;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.StringSelection;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -329,14 +332,14 @@ public class JTableComputers extends JTable {
         int modelRow = jTable.convertRowIndexToModel(selectedRow);
         Computer computer = computerTableModel.getComputerAtRow(modelRow);
 
-        if (e.getSource().equals(jMenuItemCopyCellContent)) {
-
-        } else if (e.getSource().equals(jMenuItemVNCAccessTheComputerOnlyToView)) {
+        if (e.getSource().equals(jMenuItemVNCAccessTheComputerOnlyToView)) {
           vNCAccessTheComputerOnlyToView(computer);
         } else if (e.getSource().equals(jMenuItemVNCAccessTheComputerAndInteract)) {
           vNCAccessTheComputerAndInteract(computer);
         } else if (e.getSource().equals(jMenuItemVNCAccessTheComputerWithCredentials)) {
           vNCAccessTheComputerWithCredentials(computer);
+        } else if (e.getSource().equals(jMenuItemCopyCellContent)) {
+          copyCellContent();
         } else if (e.getSource().equals(jMenuItemComputerUpdate)) {
           updateComputer(computer);
         } else if (e.getSource().equals(jMenuItemComputerDelete)) {
@@ -354,6 +357,27 @@ public class JTableComputers extends JTable {
 
       private void vNCAccessTheComputerWithCredentials(Computer computer) {
         vncComputerListInternalFrameController.vNCAccessTheComputerWithCredentials(computer);
+      }
+
+      private void copyCellContent() {
+
+        int row = jTable.getSelectedRow();
+        int column = jTable.getSelectedColumn();
+
+        if (row != -1 && column != -1) {
+
+          // It is always necessary to convert the row and column values, since the table is a
+          // "TableRowSorter".
+          // In addition, the columns can also be moved.
+          int rowSorted = jTable.convertRowIndexToModel(row);
+          int columnSorted = jTable.convertColumnIndexToModel(column);
+
+          Object cellContent = computerTableModel.getValueAt(rowSorted, columnSorted);
+
+          StringSelection selection = new StringSelection(cellContent.toString());
+          Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+          clipboard.setContents(selection, null);
+        }
       }
 
       private void updateComputer(Computer computer) {
@@ -389,6 +413,16 @@ public class JTableComputers extends JTable {
         int rowSelected = jTable.rowAtPoint(e.getPoint());
 
         if (rowSelected != -1) jTable.setRowSelectionInterval(rowSelected, rowSelected);
+
+        int row = jTable.rowAtPoint(e.getPoint());
+        int col = jTable.columnAtPoint(e.getPoint());
+
+        // select the cell before displaying the menu to avoid problems
+        // with the menu's JItemMenu copy cell option
+        if (row >= 0 && col >= 0) {
+          jTable.setRowSelectionInterval(row, row);
+          jTable.setColumnSelectionInterval(col, col);
+        }
 
         jPopupMenuRightMouseClick.show(jTable, e.getX(), e.getY());
       }
