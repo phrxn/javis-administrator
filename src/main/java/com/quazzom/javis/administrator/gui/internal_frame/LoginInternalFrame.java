@@ -11,8 +11,7 @@ import javax.swing.JTextField;
 import javax.swing.KeyStroke;
 import javax.swing.SwingConstants;
 import com.quazzom.javis.administrator.AdministratorSingleton;
-import com.quazzom.javis.administrator.configuration.GeneralConfiguration;
-import com.quazzom.javis.administrator.gui.SwingMediator;
+import com.quazzom.javis.administrator.gui.controllers.LoginInternalFrameController;
 import com.quazzom.javis.administrator.images.ImagePathToFile;
 import com.quazzom.javis.administrator.images.SwingImages;
 import com.quazzom.javis.administrator.lang.LanguageFactory;
@@ -23,7 +22,7 @@ public class LoginInternalFrame extends RootInternalFrame {
 
   private static final long serialVersionUID = 1L;
 
-  private SwingMediator swingMediator;
+  private LoginInternalFrameController loginInternalFrameController;
 
   private Text language;
 
@@ -43,8 +42,7 @@ public class LoginInternalFrame extends RootInternalFrame {
 
   private ButtonsControl buttonsControl;
 
-  public LoginInternalFrame(
-      GeneralConfiguration generalConfiguration, SwingMediator swingMediator) {
+  public LoginInternalFrame(LoginInternalFrameController loginInternalFrameController) {
 
     super(
         "", // title
@@ -53,7 +51,7 @@ public class LoginInternalFrame extends RootInternalFrame {
         false, // maximizable
         false); // iconifiable
 
-    this.swingMediator = swingMediator;
+    this.loginInternalFrameController = loginInternalFrameController;
     this.language = LanguageFactory.getLanguage(LanguagePathToFile.LOGIN_INTERNAL_FRAME);
     this.buttonsControl = new ButtonsControl();
 
@@ -135,12 +133,12 @@ public class LoginInternalFrame extends RootInternalFrame {
     @Override
     public void actionPerformed(ActionEvent e) {
       if (e.getSource().equals(jButtonCancel) || jButtonCancel.isFocusOwner()) {
-        swingMediator.showExitProgram();
+        loginInternalFrameController.leaveTheProgram();
         return;
       }
       String userName = jTextFiedUsername.getText();
       String userPassword = new String(jPasswordFieldUserPassword.getPassword());
-      swingMediator.makeLogin(userName, userPassword);
+      loginInternalFrameController.makeLogin(userName, userPassword);
     }
   }
 }
