@@ -1,0 +1,117 @@
+<language class="Computer">
+	<text key="POWEROFF" type="Text">
+		<en_us>Power Off</en_us>
+		<pt_br>Desligado</pt_br>
+	</text>
+	<text key="POWERON" type="Text">
+		<en_us>Power On</en_us>
+		<pt_br>Ligado</pt_br>
+	</text>
+	<text key="INVALID" type="Text">
+		<en_us>-</en_us>
+		<pt_br>-</pt_br>
+	</text>
+	<text key="CONSOLE_CONNECT" type="Text">
+		<en_us>Console Connect</en_us>
+		<pt_br>Console Conectado</pt_br>
+	</text>
+	<text key="CONSOLE_DISCONNECT" type="Text">
+		<en_us>Console Disconnect</en_us>
+		<pt_br>Console Desconectado</pt_br>
+	</text>
+	<text key="REMOTE_CONNECT" type="Text">
+		<en_us>Remote Connect</en_us>
+		<pt_br>Remoto (Conectado)</pt_br>
+	</text>
+	<text key="REMOTE_DISCONNECT" type="Text">
+		<en_us>Remote Disconnect</en_us>
+		<pt_br>Remoto (Desconectado)</pt_br>
+	</text>
+	<text key="SESSION_LOGON" type="Text">
+		<en_us>Session LogOn</en_us>
+		<pt_br>Entrou na Sessão</pt_br>
+	</text>
+	<text key="SESSION_LOGOFF" type="Text">
+		<en_us>Session LogOff</en_us>
+		<pt_br>Saiu da Sessão</pt_br>
+	</text>
+	<text key="SESSION_LOCK" type="Text">
+		<en_us>Session Lock</en_us>
+		<pt_br>Sessão desbloqueada</pt_br>
+	</text>
+	<text key="SESSION_UNLOCK" type="Text">
+		<en_us>Session Unlock</en_us>
+		<pt_br>Sessão bloqueada</pt_br>
+	</text>
+	<text key="SESSION_REMOTE_CONTROL" type="Text">
+		<en_us>Session Remote Control</en_us>
+		<pt_br>Sessão (Controle remoto)</pt_br>
+	</text>
+	<text key="SESSION_CREATE" type="Text">
+		<en_us>Session Create</en_us>
+		<pt_br>Sessão criada</pt_br>
+	</text>
+	<text key="SESSION_TERMINATE" type="Text">
+		<en_us>Session Terminate</en_us>
+		<pt_br>Sessão Terminada</pt_br>
+	</text>
+	<text key="SESSION_LIX_LOGON" type="Text">
+		<en_us>Session Linux LogOn</en_us>
+		<pt_br>Sessão (Linux LogOn)</pt_br>
+	</text>
+	<text key="YES" type="Text">
+		<en_us>Yes</en_us>
+		<pt_br>Sim</pt_br>
+	</text>
+	<text key="NO" type="Text">
+		<en_us>No</en_us>
+		<pt_br>Não</pt_br>
+	</text>
+	<text key="TIME_FORMAT_PATTERN" type="Text">
+		<en_us>MM/dd/yyyy hh:mm a</en_us>
+		<pt_br>dd/MM/yyyy HH:mm</pt_br>
+	</text>
+	<text key="SESSION_TYPE_EXCEPTION" type="Exception">
+		<en_us>The value %d is not a valid value for the session type</en_us>
+		<pt_br>O valor %d não é um valor válido para o tipo de sessão</pt_br>
+	</text>
+	<text key="POWERSTATUS_TYPE_EXCEPTION" type="Exception">
+		<en_us>The value %d is not a valid value for the computer status
+		</en_us>
+		<pt_br>O valor %d não é um valor válido para o estado do computador
+		</pt_br>
+	</text>
+	<text key="JAVIS_CLIENT_VERSION_SIZE_EXCEPTION" type="Exception">
+		<en_us>Javis client version text cannot be longer than %d characters
+		</en_us>
+		<pt_br>O texto da versão do cliente Javis não pode ter mais que %d
+			caracteres
+		</pt_br>
+	</text>
+	<text key="INVALID_ID_EXCEPTION" type="Exception">
+		<en_us>ID value must be a number greater than %d</en_us>
+		<pt_br>O valor do ID deve ser um número maior que 0</pt_br>
+	</text>
+	<text key="INVALID_USERNAME_EMPTY_EXCEPTION" type="Exception">
+		<en_us>Username cannot be empty</en_us>
+		<pt_br>O nome de usuário não pode estar vazio</pt_br>
+	</text>
+	<text key="INVALID_USERNAME_SIZE_EXCEPTION" type="Exception">
+		<en_us>Username cannot be longer than %d characters</en_us>
+		<pt_br>O nome de usuário não pode ter mais de %d caracteres</pt_br>
+	</text>
+	<text key="INVALID_HOSTNAME_EMPTY_EXCEPTION" type="Exception">
+		<en_us>Hostname cannot be empty</en_us>
+		<pt_br>O nome do computador não pode estar vazio</pt_br>
+	</text>
+	<text key="INVALID_HOSTNAME_SIZE_EXCEPTION" type="Exception">
+		<en_us>Username cannot be longer than %d characters</en_us>
+		<pt_br>O nome do usuário não pode ter mais do que %d caracteres
+		</pt_br>
+	</text>
+	<text key="INVALID_DETAILS_SIZE_EXCEPTION" type="Exception">
+		<en_us>Username cannot be longer than %d characters</en_us>
+		<pt_br>O nome de usuário não pode ter mais do que %d caracteres
+		</pt_br>
+	</text>
+</language>

@@ -1,0 +1,6 @@
+<language class="ConnectionFactorySQLServer">
+	<text key="PROPERTY_DOESNT_EXIST_IN_FILE" type="Error">
+		<en_us>Check the configuration file (%s)</en_us>
+		<pt_br>Verifique o arquivo de configuração (%s)</pt_br>
+	</text>
+</language>

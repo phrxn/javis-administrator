@@ -198,8 +198,12 @@ public class JDialogUncaughtException extends JDialog implements UncaughtExcepti
   private void setTexts(Text text, InformationAboutUncaughtException iaue) {
 
     jButtonClose.setText(text.getText("JBUTTON_CLOSE"));
-    // --
-    jLabelInformation.setText(text.getText("JLABEL_INFORMATION", iaue.getStrProgramName()));
+
+    // The trim in the JLABEL_INFORMATION text is important to remove any blank characters
+    // before <html>. To the html work in the Swing JLabel the string MUST
+    // start with <html>.
+    jLabelInformation.setText(text.getText("JLABEL_INFORMATION", iaue.getStrProgramName()).trim());
+
     // --
     jLabelTitleH1.setText(text.getText("JLABEL_TITLE_H1"));
     // --

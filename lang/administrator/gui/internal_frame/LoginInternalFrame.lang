@@ -1,0 +1,30 @@
+<language class="LoginInternalFrame">
+	<text key="JLABEL_YOU_WISH" type="Text">
+		<en_us>You wish</en_us>
+		<pt_br>Você deseja</pt_br>
+	</text>
+	<text key="TITLE" type="Text">
+		<en_us>Login</en_us>
+		<pt_br>Login</pt_br>
+	</text>
+	<text key="JBUTTON_LOGIN" type="Text">
+		<en_us>Login</en_us>
+		<pt_br>Entrar</pt_br>
+	</text>
+	<text key="JBUTTON_CANCEL" type="Text">
+		<en_us>Cancel</en_us>
+		<pt_br>Cancelar</pt_br>
+	</text>
+	<text key="JLABEL_USERNAME" type="Text">
+		<en_us>User</en_us>
+		<pt_br>Usuário</pt_br>
+	</text>
+	<text key="JLABEL_USER_PASSWORD" type="Text">
+		<en_us>Password</en_us>
+		<pt_br>Senha</pt_br>
+	</text>
+	<text key="JLABEL_VERSION" type="Text">
+		<en_us>%s</en_us>
+		<pt_br>%s</pt_br>
+	</text>
+</language>

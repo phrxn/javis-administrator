@@ -1,0 +1,78 @@
+<language class="JTableComputers">
+	<text key="COLUMN_NAME_ID" type="Text">
+		<en_us>ID</en_us>
+		<pt_br>ID</pt_br>
+	</text>
+	<text key="COLUMN_NAME_ID_POWER_STATUS_COMPUTER" type="Text">
+		<en_us>Computer Status</en_us>
+		<pt_br>Estado do computador</pt_br>
+	</text>
+	<text key="COLUMN_NAME_ID_SESSION_TYPE" type="Text">
+		<en_us>Session Type</en_us>
+		<pt_br>Tipo de sessão</pt_br>
+	</text>
+	<text key="COLUMN_NAME_ID_USERNAME" type="Text">
+		<en_us>Username</en_us>
+		<pt_br>Nome do usuário</pt_br>
+	</text>
+	<text key="COLUMN_NAME_ID_HOSTNAME" type="Text">
+		<en_us>Hostname</en_us>
+		<pt_br>Nome do computador</pt_br>
+	</text>
+	<text key="COLUMN_NAME_ID_IP" type="Text">
+		<en_us>IP</en_us>
+		<pt_br>IP</pt_br>
+	</text>
+	<text key="COLUMN_NAME_ID_IS_MANUAL" type="Text">
+		<en_us>Manually created information?</en_us>
+		<pt_br>Informação criada manualmente?</pt_br>
+	</text>
+	<text key="COLUMN_NAME_ID_LOGIN_DATE" type="Text">
+		<en_us>Login Date</en_us>
+		<pt_br>Data de Login</pt_br>
+	</text>
+	<text key="COLUMN_NAME_ID_JAVIS_CLIENT_VERSION" type="Text">
+		<en_us>Javis Client Version</en_us>
+		<pt_br>Versão do Javis Client</pt_br>
+	</text>
+	<text key="COLUMN_NAME_ID_DETAILS" type="Text">
+		<en_us>Details</en_us>
+		<pt_br>Detalhes</pt_br>
+	</text>
+	<text key="JMENUITEM_VNC_ACCESS_THE_COMPUTER_ONLY_TO_VIEW" type="Text">
+		<en_us>Automatic (see screen only)</en_us>
+		<pt_br>Automático (ver somente a tela)</pt_br>
+	</text>
+	<text key="JMENUITEM_VNC_ACCESS_THE_COMPUTER_AND_INTERACT" type="Text">
+		<en_us>Automatic (interact using mouse and keyboard)</en_us>
+		<pt_br>Automático (interagir usando mouse e teclado)</pt_br>
+	</text>
+	<text key="JMENUITEM_VNC_ACCESS_THE_COMPUTER_WITH_CREDENTIALS" type="Text">
+		<en_us>Enter access credentials</en_us>
+		<pt_br>Inserir as credenciais de acesso</pt_br>
+	</text>
+	<text key="JMENUITEM_COPY_CELL_CONTENT" type="Text">
+		<en_us>Copy cell content</en_us>
+		<pt_br>Copiar o conteúdo da célula</pt_br>
+	</text>
+	<text key="JMENUITEM_COMPUTER_UPDATE" type="Text">
+		<en_us>Update</en_us>
+		<pt_br>Atualizar</pt_br>
+	</text>
+	<text key="JMENUITEM_COMPUTER_DELETE" type="Text">
+		<en_us>Delete</en_us>
+		<pt_br>Excluir</pt_br>
+	</text>
+	<text key="JMENU_COMPUTER_OPTIONS" type="Text">
+		<en_us>Computer</en_us>
+		<pt_br>Computador</pt_br>
+	</text>
+	<text key="JMENU_VNC_CONNECTION_OPTIONS" type="Text">
+		<en_us>Access the computer</en_us>
+		<pt_br>Acessar o computador</pt_br>
+	</text>
+	<text key="CONFIRM_DELETION" type="Text">
+		<en_us>Delete the computer?</en_us>
+		<pt_br>Excluir o computador?</pt_br>
+	</text>
+</language>

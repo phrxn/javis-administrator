@@ -1,0 +1,10 @@
+<language class="JDialogInteraction">
+	<text key="YES" type="Text">
+		<en_us>Yes</en_us>
+		<pt_br>Sim</pt_br>
+	</text>
+	<text key="CANCEL" type="Text">
+		<en_us>Cancel</en_us>
+		<pt_br>Cancelar</pt_br>
+	</text>
+</language>

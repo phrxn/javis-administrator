@@ -1,0 +1,14 @@
+<language class="SQLServerConnectionInformations">
+	<text key="PROPERTY_NOT_FOUND_EXCEPTION" type="Exception">
+		<en_us>Property %s not found</en_us>
+		<pt_br>A propriedade %s não foi encontrada</pt_br>
+	</text>
+	<text key="PROPERTY_NOT_FOUND_EMPTY_STRING_EXCEPTION" type="Exception">
+		<en_us>Property %s cannot be empty</en_us>
+		<pt_br>A propriedade %s não pode estar vazia</pt_br>
+	</text>
+	<text key="PROPERTY_NOT_FOUND_INVALID_VALUE_EXCEPTION" type="Exception">
+		<en_us>The value %s is invalid for property %s</en_us>
+		<pt_br>O valor %s é inválido para a propriedade %s</pt_br>
+	</text>
+</language>

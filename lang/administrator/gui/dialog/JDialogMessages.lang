@@ -1,0 +1,6 @@
+<language class="JDialogMessages">
+	<text key="JBUTTON_CLOSE" type="Text">
+		<en_us>Close</en_us>
+		<pt_br>Fechar</pt_br>
+	</text>
+</language>

@@ -1,0 +1,10 @@
+<language class="CopyPopup">
+	<text key="JMENUITEM_COPY" type="Text">
+		<en_us>Copy</en_us>
+		<pt_br>Copiar</pt_br>
+	</text>
+	<text key="JMENUITEM_SELECTALL" type="Text">
+		<en_us>Select all</en_us>
+		<pt_br>Selecionar tudo</pt_br>
+	</text>
+</language>

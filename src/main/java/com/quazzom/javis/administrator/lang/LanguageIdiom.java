@@ -4,8 +4,8 @@ import com.quazzom.javis.administrator.HasValue;
 
 public enum LanguageIdiom implements HasValue {
   INVALID("?"),
-  EN_US("EN_US"),
-  PT_BR("PT_BR");
+  EN_US("en_us"),
+  PT_BR("pt_br");
 
   private final String variableName;
 

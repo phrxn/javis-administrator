@@ -22,23 +22,9 @@ public class Language implements Text {
     if (!propertiesTexts.containsKey(key))
       throw new TextNotFoundException(createTextKeyDoesntExist(key));
 
-    String languageText = removeCommentFromLanguageText(propertiesTexts.getProperty(key));
+    String languageText = propertiesTexts.getProperty(key);
 
     return String.format(languageText, args);
-  }
-
-  public String removeCommentFromLanguageText(String value) {
-    String theLanguageText = value;
-
-    theLanguageText = theLanguageText.trim();
-
-    if (value.contains(COMMENT_AND_LANGUAGE_TEXT_SEPARATOR)) {
-      String[] commentAndLanguageText = value.split(COMMENT_AND_LANGUAGE_TEXT_SEPARATOR);
-      theLanguageText = "";
-      if (commentAndLanguageText.length == 2) theLanguageText = commentAndLanguageText[1];
-    }
-
-    return theLanguageText;
   }
 
   public void propertiesTexts(Properties propertiesTexts) {

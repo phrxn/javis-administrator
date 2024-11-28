@@ -1,0 +1,6 @@
+<language class="SwingMakeLogin">
+	<text key="NOT_POSSIBLE_MAKE_LOGIN" type="Error">
+		<en_us>Unable to log in</en_us>
+		<pt_br>Não foi possível efetuar o login</pt_br>
+	</text>
+</language>

@@ -1,0 +1,22 @@
+<language class="OutputStreamUncaughtException">
+	<text key="PROGRAM" type="Text">
+		<en_us>Program: </en_us>
+		<pt_br>Programa: </pt_br>
+	</text>
+	<text key="VERSION" type="Text">
+		<en_us>Version: </en_us>
+		<pt_br>Versão: </pt_br>
+	</text>
+	<text key="THREAD_ID" type="Text">
+		<en_us>Thread ID: </en_us>
+		<pt_br>ID da Thread: </pt_br>
+	</text>
+	<text key="THREAD_NAME" type="Text">
+		<en_us>Thread name: </en_us>
+		<pt_br>Nome da Thread: </pt_br>
+	</text>
+	<text key="STACK_TRACE" type="Text">
+		<en_us>Stack Trace: </en_us>
+		<pt_br>Pilha de erro: </pt_br>
+	</text>
+</language>

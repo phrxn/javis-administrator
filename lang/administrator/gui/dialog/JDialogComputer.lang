@@ -1,0 +1,58 @@
+<language class="JDialogComputer">
+	<text key="STATUS" type="Text">
+		<en_us>Status</en_us>
+		<pt_br>Estado</pt_br>
+	</text>
+	<text key="TYPE_OF_SESSION" type="Text">
+		<en_us>Type of session</en_us>
+		<pt_br>Tipo de sessão</pt_br>
+	</text>
+	<text key="USERNAME" type="Text">
+		<en_us>Username</en_us>
+		<pt_br>Nome do usuário</pt_br>
+	</text>
+	<text key="HOSTNAME" type="Text">
+		<en_us>Hostname</en_us>
+		<pt_br>Nome do computador</pt_br>
+	</text>
+	<text key="IP" type="Text">
+		<en_us>IP</en_us>
+		<pt_br>IP</pt_br>
+	</text>
+	<text key="JAVIS_CLIENT_VERSION" type="Text">
+		<en_us>Javis Client Version</en_us>
+		<pt_br>Versão do Javis Cliente</pt_br>
+	</text>
+	<text key="DETAILS" type="Text">
+		<en_us>Details</en_us>
+		<pt_br>Detalhes</pt_br>
+	</text>
+	<text key="OK" type="Text">
+		<en_us>OK</en_us>
+		<pt_br>OK</pt_br>
+	</text>
+	<text key="CANCEL" type="Text">
+		<en_us>Cancel</en_us>
+		<pt_br>Cancelar</pt_br>
+	</text>
+	<text key="CREATE_COMPUTER_EXCEPTION" type="Exception">
+		<en_us>Unable to save computer</en_us>
+		<pt_br>Não é possível salvar computador</pt_br>
+	</text>
+	<text key="UPDATE_COMPUTER_EXCEPTION" type="Exception">
+		<en_us>Unable to update computer information</en_us>
+		<pt_br>Não é possível atualizar as informações do computador</pt_br>
+	</text>
+	<text key="ERROR_INVALID_INFORMATION" type="Error">
+		<en_us>The computer contains invalid information</en_us>
+		<pt_br>O Computador contém informações inválidas</pt_br>
+	</text>
+	<text key="CONFIRM_BEFORE_OK" type="Text">
+		<en_us>Continue with changes?</en_us>
+		<pt_br>Continuar com as alterações?</pt_br>
+	</text>
+	<text key="" type="">
+		<en_us></en_us>
+		<pt_br></pt_br>
+	</text>
+</language>

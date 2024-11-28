@@ -1,0 +1,30 @@
+<language class="VNCComputerListInternalFrame">
+	<text key="JLABEL_FILTER_INFO" type="Text">
+		<en_us>Filter</en_us>
+		<pt_br>Filtro</pt_br>
+	</text>
+	<text key="JBUTTON_CLEAN_FILTER" type="Text">
+		<en_us>Clean</en_us>
+		<pt_br>Limpar</pt_br>
+	</text>
+	<text key="JMENU_VNC_ACCESS" type="Text">
+		<en_us>VNC Access</en_us>
+		<pt_br>Acesso VNC</pt_br>
+	</text>
+	<text key="JMENU_COMPUTER" type="Text">
+		<en_us>Computer</en_us>
+		<pt_br>Computador</pt_br>
+	</text>
+	<text key="JMENUITEM_COMPUTER_CREATE" type="Text">
+		<en_us>Create</en_us>
+		<pt_br>Criar</pt_br>
+	</text>
+	<text key="JMENUITEM_VNC_OPEN_SCREEN_TO_CONNECTION" type="Text">
+		<en_us>Open VNC Access screen</en_us>
+		<pt_br>Abrir tela de acesso VNC</pt_br>
+	</text>
+	<text key="TITLE" type="Text">
+		<en_us>Computers List</en_us>
+		<pt_br>Lista de computadores</pt_br>
+	</text>
+</language>

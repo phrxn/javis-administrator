@@ -1,0 +1,6 @@
+<language class="AuthenticationDemo">
+	<text key="ERROR_INVALID_USER_OR_PASSWORD" type="Error">
+		<en_us>Invalid username or password</en_us>
+		<pt_br>Usuário ou senha inválidos</pt_br>
+	</text>
+</language>

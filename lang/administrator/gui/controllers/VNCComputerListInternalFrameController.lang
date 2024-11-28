@@ -1,0 +1,18 @@
+<language class="VNCComputerListInternalFrameController">
+	<text key="CREATE_COMPUTER_LIST_EXCEPTION" type="Exception">
+		<en_us>Unable to create computer list</en_us>
+		<pt_br>Não foi possível criar a lista de computadores</pt_br>
+	</text>
+	<text key="UPDATE_COMPUTER_EXCEPTION" type="Exception">
+		<en_us>Unable to update the computer</en_us>
+		<pt_br>Não foi possível atualizar o computador</pt_br>
+	</text>
+	<text key="DELETE_COMPUTER_EXCEPTION" type="Exception">
+		<en_us>Unable to delete the computer</en_us>
+		<pt_br>Não foi possível excluir o computador</pt_br>
+	</text>
+	<text key="CREATE_COMPUTER_EXCEPTION" type="Exception">
+		<en_us>Unable to create the computer</en_us>
+		<pt_br>Não foi possível criar o computador</pt_br>
+	</text>
+</language>

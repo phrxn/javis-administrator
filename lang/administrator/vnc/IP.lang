@@ -1,0 +1,10 @@
+<language class="IP">
+	<text key="INVALID_IP_SIZE_EXCEPTION" type="Exception">
+		<en_us>Text size cannot exceed %d characters</en_us>
+		<pt_br>O tamanho do texto não pode exceder %d caracteres</pt_br>
+	</text>
+	<text key="STRING_IP_SYNTAX_EXCEPTION" type="Exception">
+		<en_us>The IP must be 4 octets from 0-255 separated by dots: XXX.XXX.XXX.XXX</en_us>
+		<pt_br>O IP deve ter 4 octetos de 0-255 separados por pontos: XXX.XXX.XXX.XXX</pt_br>
+	</text>
+</language>

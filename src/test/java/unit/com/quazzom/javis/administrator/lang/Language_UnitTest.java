@@ -71,69 +71,6 @@ public class Language_UnitTest {
     assertEquals("the value 10 foobar x", value);
   }
 
-  @Test
-  public void testRemoveCommentFromLanguageText_emptyString() {
-    Language language = new Language();
-
-    String formattedValue = language.removeCommentFromLanguageText("");
-
-    assertEquals("", formattedValue);
-  }
-
-  @Test
-  public void testRemoveCommentFromLanguageText_trim() {
-    Language language = new Language();
-
-    String formattedValue = language.removeCommentFromLanguageText(" A ");
-
-    assertEquals("A", formattedValue);
-  }
-
-  @Test
-  public void testRemoveCommentFromLanguageText_onlyLanguageText() {
-    Language language = new Language();
-
-    String formattedValue = language.removeCommentFromLanguageText("ABC");
-
-    assertEquals("ABC", formattedValue);
-  }
-
-  @Test
-  public void testRemoveCommentFromLanguageText_onlySeparator() {
-    Language language = new Language();
-
-    String formattedValue = language.removeCommentFromLanguageText("\t");
-
-    assertEquals("", formattedValue);
-  }
-
-  @Test
-  public void testRemoveCommentFromLanguageText_CommentAndSeparator() {
-    Language language = new Language();
-
-    String formattedValue = language.removeCommentFromLanguageText("OnlyCommit\t");
-
-    assertEquals("", formattedValue);
-  }
-
-  @Test
-  public void testRemoveCommentFromLanguageText_separatorAndLanguageText() {
-    Language language = new Language();
-
-    String formattedValue = language.removeCommentFromLanguageText("\tA");
-
-    assertEquals("A", formattedValue);
-  }
-
-  @Test
-  public void testRemoveCommentFromLanguageText_commentAndSeparatorAndLanguageText() {
-    Language language = new Language();
-
-    String formattedValue = language.removeCommentFromLanguageText("Comment\tA");
-
-    assertEquals("A", formattedValue);
-  }
-
   // ---------------------------------------------------------
 
   @Test

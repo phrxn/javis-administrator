@@ -1,0 +1,94 @@
+<language class="JDialogUncaughtException">
+	<text key="JBUTTON_CLOSE" type="Text">
+		<en_us>Close</en_us>
+		<pt_br>Fechar</pt_br>
+	</text>
+	<text key="JLABEL_INFORMATION" type="Text">
+		<en_us>
+			<html>
+				%s has experienced an unhandled error, and may be acting
+				inconsistently. <br />
+				It is advisable to restart the program to ensure that everything
+				works as expected.<br />
+				<br />
+				This error may be reported to the developer.<br />
+				Please do the following:<br />
+				<i>
+					<font color="red">Copy</font>
+				</i>
+				and
+				<i>
+					<font color="red">paste</font>
+				</i>
+				the
+				text below and email it to them
+				<font color="red">with a brief explanation</font>
+				of what you were doing before the error occurred.
+				<br />
+			</html>
+		</en_us>
+		<pt_br>
+			<html>
+				%s experimentou um erro não tratado, e pode estar funcionando de
+				forma inconsistente.
+				<br />
+				É aconselhavel reinicar o programa para garantir que tudo funcione
+				como o esperado.
+				<br />
+				<br />
+				Esse erro pode ser reportado para o desenvolvedor.
+				<br />
+				Faça o seguinte:
+				<br />
+				<i>
+					<font color="red">Copie</font>
+				</i>
+				e
+				<i>
+					<font color="red">cole</font>
+				</i>
+				o
+				texto abaixo e envie por e-mail
+				<font color="red">com uma breve explicação</font>
+				do que você estava fazendo antes do erro acontecer.
+				<br />
+			</html>
+		</pt_br>
+	</text>
+	<text key="JLABEL_TITLE_H1" type="Text">
+		<en_us>An unhandled error occurred!</en_us>
+		<pt_br>Um erro não tratado ocorreu!</pt_br>
+	</text>
+	<text key="JLABEL_PROGRAM_NAME_INFO" type="Text">
+		<en_us>Program name:</en_us>
+		<pt_br>Nome do programa:</pt_br>
+	</text>
+	<text key="JLABEL_PROGRAM_NAME" type="Text">
+		<en_us>%s</en_us>
+		<pt_br>%s</pt_br>
+	</text>
+	<text key="JLABEL_VERSION_INFO" type="Text">
+		<en_us>Program Version:</en_us>
+		<pt_br>Versão do programa:</pt_br>
+	</text>
+	<text key="JLABEL_VERSION" type="Text">
+		<en_us>%s</en_us>
+		<pt_br>%s</pt_br>
+	</text>
+	<text key="JLABEL_THREAD_ID_INFO" type="Text">
+		<en_us>Thread ID:</en_us>
+		<pt_br>ID da Thread:</pt_br>
+	</text>
+	<text key="JLABEL_THREAD_ID" type="Text">
+		<en_us>%s</en_us>
+		<pt_br>%s</pt_br>
+	</text>
+	<text key="JLABEL_THREAD_NAME_INFO" type="Text">
+		<en_us>Thread name:</en_us>
+		<pt_br>Nome da Thread:</pt_br>
+	</text>
+	<text key="JLABEL_THREAD_NAME" type="Text">
+		<en_us>%s</en_us>
+		<pt_br>%s</pt_br>
+	</text>
+</language>

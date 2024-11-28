@@ -1,12 +1,12 @@
 package com.quazzom.javis.administrator.lang;
 
-import java.io.FileInputStream;
-import java.io.IOException;
 import java.util.Properties;
 
 public class LanguageFromFile extends Language {
 
-  private static final String FOLDER_TO_LANGUAGES = "lang/";
+  public static final String FOLDER_TO_LANGUAGES = "lang/";
+
+  private CreatePropertiesToLanguage createPropertiesToLanguage;
 
   public LanguageFromFile(LanguageIdiom languageIdiom, LanguagePathToFile languagePathToFile) {
     loadPropertiesFromFile(languageIdiom, languagePathToFile);
@@ -19,24 +19,13 @@ public class LanguageFromFile extends Language {
   public void loadPropertiesFromFile(
       LanguageIdiom languageIdiom, LanguagePathToFile languagePathToFile) {
 
-    String pathToLanguageFile = createPathToLanguageFile(languageIdiom, languagePathToFile);
+    createPropertiesToLanguage =
+        new CreatePropertiesToLanguageFromXMLFile(languageIdiom, languagePathToFile);
 
     try {
-      FileInputStream fileLanguage = new FileInputStream(pathToLanguageFile);
-      propertiesTexts.load(fileLanguage);
-    } catch (IOException e) {
+      propertiesTexts = createPropertiesToLanguage.createProperties();
+    } catch (CreatePropertiesToLanguageException e) {
       throw new RuntimeException(e);
     }
-  }
-
-  public String createPathToLanguageFile(
-      LanguageIdiom languageIdiom, LanguagePathToFile languagePathToFile) {
-    StringBuilder sb = new StringBuilder();
-    sb.append(FOLDER_TO_LANGUAGES)
-        .append(languageIdiom.getValue())
-        .append("/")
-        .append(languagePathToFile.getPath());
-
-    return sb.toString();
   }
 }
