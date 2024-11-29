@@ -9,6 +9,10 @@ To change de program version:
 
 * Make all changes and make all commits (needed obviously)
 
+* compile the project with the tests
+
+* run the binary to check if it is ok
+
 * When everything is ready, and the last commit has been made, change $VERSION in: Administrator.java and pom.xml
 
 * Create a folder inside: docs/version with the name $VERSION. Example:
