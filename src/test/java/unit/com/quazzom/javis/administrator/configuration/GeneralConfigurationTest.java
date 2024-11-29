@@ -212,8 +212,8 @@ public class GeneralConfigurationTest {
 
     assertDoesNotThrow(
         () -> {
-          gc.setLanguageIdiom("EN_US");
-          gc.setLanguageIdiom("PT_BR");
+          gc.setLanguageIdiom("en_us");
+          gc.setLanguageIdiom("pt_br");
         });
   }
 
@@ -226,7 +226,7 @@ public class GeneralConfigurationTest {
             + "ENVIRONMENT_MODE=PRODUCTION\n"
             + "STORAGE=SQL_SERVER\n"
             + "AUTHENTICATION=ACTIVE_DIRECTORY\n"
-            + "LANGUAGE=EN_US\n";
+            + "LANGUAGE=en_us\n";
 
     InputStream inputStream = new ByteArrayInputStream(validOptionsAndValues.getBytes());
 
