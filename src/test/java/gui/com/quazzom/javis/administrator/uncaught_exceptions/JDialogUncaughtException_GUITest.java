@@ -30,7 +30,7 @@ public class JDialogUncaughtException_GUITest {
     dialog.setVisible(true);
 
     while (dialog.isVisible()) {
-      Thread.sleep(1000);
+      Thread.sleep(1000L);
     }
   }
 }

@@ -11,7 +11,7 @@ public class JDialogMessages_GUITest {
     JDialogMessages jdm = new JDialogMessages();
 
     while (jdm.isVisible()) {
-      Thread.sleep(1000);
+      Thread.sleep(1000L);
     }
   }
 }
