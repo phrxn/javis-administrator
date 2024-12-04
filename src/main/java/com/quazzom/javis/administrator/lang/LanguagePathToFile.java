@@ -27,7 +27,14 @@ public enum LanguagePathToFile {
   COMPUTER_PERSISTENCE_IN_MEMORY("administrator/persistence/ComputerPersistenceInMemory.lang"),
   SQL_SERVER_CONNECTION_INFORMATIONS(
       "administrator/configuration/SQLServerConnectionInformations.lang"),
-  CONNECTION_FACTORY_SQL_SERVER("administrator/persistence/ConnectionFactorySQLServer.lang");
+  CONNECTION_FACTORY_SQL_SERVER("administrator/persistence/ConnectionFactorySQLServer.lang"),
+  PROTOCOL_VERSION("administrator/rfb/ProtocolVersion.lang"),
+  PROTOCOL_VERSION_NEGOTIATOR("administrator/rfb/ProtocolVersionNegotiator.lang"),
+  RFB_SESSION("administrator/rfb/RFBSession.lang"),
+  SERVER_SECURITY_TYPE_PROTOCOL_VERSION3_3(
+      "administrator/rfb/ServerSecurityTypeProtocolVersion3_3.lang"),
+  SERVER_SERCURITY_TYPE_PROTOCOL_VERSIONS(
+      "administrator/rfb/ServerSecurityTypeProtocolVersions.lang");
 
   private String path;
 

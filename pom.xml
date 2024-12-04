@@ -120,8 +120,7 @@
 					<descriptorRefs>
 						<descriptorRef>jar-with-dependencies</descriptorRef>
 					</descriptorRefs>
-					<appendAssemblyId>false</appendAssemblyId> <!-- disable jar
-					with depencies -->
+					<appendAssemblyId>false</appendAssemblyId> <!-- disable jar with depencies -->
 					<outputDirectory>${basedir}/output/binary/${project.version}</outputDirectory>
 				</configuration>
 				<executions>

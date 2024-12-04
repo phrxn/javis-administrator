@@ -1,0 +1,15 @@
+<language class="ProtocolVersion">
+	<text key="SOCKET_TIMEOUT_EXCEPTION" type="Exception">
+		<en_us>The client computer's VNC program took a long time to respond which protocol version it uses</en_us>
+		<pt_br>O programa de VNC do computador cliente demorou muito para responder qual versão do protocolo ele utiliza</pt_br>
+	</text>
+	<text key="PROTOCOL_DECODE_EXCEPTION" type="Exception">
+		<en_us>Error reading protocol data from server: %s</en_us>
+		<pt_br>Erro durante a leitura dos dados de protocolo do servidor: %s</pt_br>
+	</text>
+	<text key="PROTOCOL_SERVER_EXCEPTION" type="Exception">
+		<en_us>Error reading protocol data from server: %s</en_us>
+		<pt_br>Erro durante a leitura dos dados de protocolo do servidor: %s</pt_br>
+	</text>
+</language>
+

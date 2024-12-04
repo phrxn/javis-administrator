@@ -1,0 +1,10 @@
+<language class="ProtocolVersionNegotiator">
+	<text key="PROTOCOL_SERVER_MINIMUM_EXCEPTION" type="Exception">
+		<en_us>The server does not support the minimum RFB protocol used by javis which is: %s. Maximum protocol supported by the server: %s</en_us>
+		<pt_br>O servidor não suporta o protocolo RFB mínimo usado pelo javis que é: %s. Protocolo máximo suportado pelo servidor: %s</pt_br>
+	</text>
+	<text key="SENDING_JAVIS_PROTOCOL_EXCEPTION" type="Exception">
+		<en_us>The Javis protocol cannot be sent to the server: %s</en_us>
+		<pt_br>O protocolo do javis não pode ser enviado para o servidor: %s</pt_br>
+	</text>
+</language>

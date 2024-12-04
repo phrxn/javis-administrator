@@ -1,0 +1,11 @@
+<language class="ServerSecurityTypeProtocolVersion3_3">
+	<text key="SOCKET_TIMEOUT_EXCEPTION" type="Exception">
+		<en_us>The client computer's VNC program took a long time to respond which authentication types it uses</en_us>
+		<pt_br>O programa de VNC do computador cliente demorou muito para responder quais tipos de autenticação ele utiliza</pt_br>
+	</text>
+	<text key="UNKNOWN_AUTHENTICATION_TYPE_EXCEPTION" type="Exception">
+		<en_us>The authentication type used by the client computer's VNC program is not known to Javis, value: %d. Protocol version 3.3</en_us>
+		<pt_br>O tipo de autenticação usada pelo programa VNC do computador cliente não é conhecido pelo Javis, valor: %d. Versão do protocolo 3.3</pt_br>
+	</text>
+</language>
+
