@@ -13,7 +13,7 @@ import org.junit.jupiter.api.Test;
 import com.quazzom.javis.administrator.configuration.ConfigurationInvalidValueException;
 import com.quazzom.javis.administrator.configuration.GeneralConfiguration;
 
-public class GeneralConfigurationTest {
+public class GeneralConfigurationTest_UnitTest {
 
   @Test
   public void testSetExecutionMode_emptyString() {
