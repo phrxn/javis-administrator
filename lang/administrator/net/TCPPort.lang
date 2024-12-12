@@ -1,0 +1,6 @@
+<language class="TCPPort">
+	<text key="INVALID_PORT_VALUE_EXCEPTION" type="Exception">
+		<en_us>The connection port value must be a number from 0 to %d</en_us>
+		<pt_br>O valor da porta de conexão deve ser um valor de 0 a %d</pt_br>
+	</text>
+</language>

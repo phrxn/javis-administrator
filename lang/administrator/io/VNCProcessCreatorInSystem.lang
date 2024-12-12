@@ -1,0 +1,17 @@
+<language class="VNCProcessCreatorInSystem">
+
+	<text key="NOT_POSSIBLE_EXECUTE_VNC_PROGRAM" type="Error">
+		<en_us>Unable to run VNC program</en_us>
+		<pt_br>Não foi possível executar o programa VNC</pt_br>
+	</text>
+	
+	<text key="VNC_PROGRAM_DOESNOT_EXIST" type="Error">
+		<en_us>The program %s does not exist</en_us>
+		<pt_br>O programa %s não existe</pt_br>
+	</text>
+	
+	<text key="INVALID_VNC_PROGRAM_CHECKSUM" type="Error">
+		<en_us>The checksum of the program %s is different from what is in the VNC configuration</en_us>
+		<pt_br>O checksum do programa %s é diferente do que está na configuração VNC</pt_br>
+	</text>
+</language>

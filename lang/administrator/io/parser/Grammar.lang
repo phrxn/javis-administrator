@@ -1,0 +1,27 @@
+<language class="Grammar">
+	<text key="OPENED_DOUBLE_QUOTES_EXCEPTION" type="Exception">
+		<en_us>Command line has open double quotes</en_us>
+		<pt_br>A linha de comando possui aspas duplas abertas</pt_br>
+	</text>
+	
+	<text key="ESCAPE_AT_THE_END_OF_THE_LINE_EXCEPTION" type="Exception">
+		<en_us>The command line cannot end with an escape character</en_us>
+		<pt_br>A linha de comando não pode finalizar com um caracter de escape</pt_br>
+	</text>
+	<text key="SEPARATOR_AFTER_ESCAPE_EXCEPTION" type="Exception">
+		<en_us>The escape has nothing to escape from. (The escape is being followed by space(s))</en_us>
+		<pt_br>O escape não possui nada para escapar. (O escape está sendo seguindo por espaço(s))</pt_br>
+	</text>
+	<text key="INVALID_CHARACTER_TO_ESCAPE_EXCEPTION" type="Exception">
+		<en_us>The character XXXXX is not a valid escape character</en_us>
+		<pt_br>O caracter %c não é um caracter de escape válido</pt_br>
+	</text>
+	<text key="INVALID_WORD_TO_ESCAPE_EXCEPTION" type="Exception">
+		<en_us>The text %s is not a valid escape text</en_us>
+		<pt_br>O texto %s não é um texto de escape válido</pt_br>
+	</text>
+	<text key="FORMMATING_STRING_DOESNT_LISTED_EXCEPTION" type="Exception">
+		<en_us>TypeOfToken is of type FormmatringString, but does not exist in FormattingString</en_us>
+		<pt_br>O TypeOfToken é do tipo FormmatringString, mas não existe no FormattingString</pt_br>
+	</text>
+</language>

@@ -10,6 +10,7 @@ import javax.swing.JFrame;
 import com.quazzom.javis.administrator.configuration.GeneralConfiguration;
 import com.quazzom.javis.administrator.gui.SwingCommons;
 import com.quazzom.javis.administrator.gui.SwingMediator;
+import com.quazzom.javis.administrator.gui.controllers.ControllersMediator;
 import com.quazzom.javis.administrator.gui.desktop_pane.AdministratorDesktopPane;
 import com.quazzom.javis.administrator.images.ImagePathToFile;
 import com.quazzom.javis.administrator.images.SwingImages;
@@ -35,6 +36,8 @@ public class AdministratorFrame extends JFrame {
 
   private SwingMediator swingMediator;
 
+  private ControllersMediator controllersMediator;
+
   public AdministratorFrame() {
 
     swingCommons = new SwingCommons();
@@ -57,16 +60,17 @@ public class AdministratorFrame extends JFrame {
   }
 
   public void startGUIProgram(GeneralConfiguration generalConfiguration) {
-    swingMediator = new SwingMediator(generalConfiguration, this, jDesktopPane);
-    swingMediator.showLoginInternalFrame();
     setIconImage(SwingImages.getImage(ImagePathToFile.ICON_JAVIS_64_X_64));
+
+    swingMediator = new SwingMediator(generalConfiguration, this, jDesktopPane);
+    controllersMediator = new ControllersMediator(generalConfiguration, swingMediator);
+    controllersMediator.showLoginInternalFrame();
   }
 
   class JFrameControl extends WindowAdapter {
     @Override
     public void windowClosing(WindowEvent e) {
-      swingMediator.showExitProgram();
+      controllersMediator.showExitProgram();
     }
   }
-  
 }

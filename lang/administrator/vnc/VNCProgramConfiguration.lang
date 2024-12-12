@@ -1,0 +1,97 @@
+<language class="VNCProgramConfiguration">
+	<text key="VNC_NAME_EMPTY_STRING_EXCEPTION" type="Exception">
+		<en_us>The name describing VNC cannot be empty</en_us>
+		<pt_br>O nome que descreve o VNC não pode ser vazio</pt_br>
+	</text>
+	<text key="VNC_NAME_SIZE_STRING_EXCEPTION" type="Exception">
+		<en_us>The name describing VNC cannot be longer than %d characters</en_us>
+		<pt_br>O nome que descreve o VNC não pode ter mais que %d caracteres</pt_br>
+	</text>
+
+
+
+	<text key="EXECUTION_LINE_EMPTY_STRING_EXCEPTION" type="Exception">
+		<en_us>The execution line cannot be empty</en_us>
+		<pt_br>A linha de execução não pode ser vazia</pt_br>
+	</text>
+	<text key="EXECUTION_LINE_SIZE_STRING_EXCEPTION" type="Exception">
+		<en_us>The execution line cannot be longer than %d characters</en_us>
+		<pt_br>A linha de execução não pode ter mais que %d caracteres</pt_br>
+	</text>
+	<text key="EXECUTION_LINE_INVALID_SYNTAX_EXCEPTION" type="Exception">
+		<en_us>The execution line syntax is invalid: %s</en_us>
+		<pt_br>A sintaxe da linha de execução é inválida: %s</pt_br>
+	</text>
+
+	<text key="PATH_TO_EXECUTABLE_EMPTY_STRING_EXCEPTION" type="Exception">
+		<en_us>The path to executable cannot be empty</en_us>
+		<pt_br>O caminho para o executável não pode ser vazio</pt_br>
+	</text>
+	<text key="PATH_TO_EXECUTABLE_SIZE_STRING_EXCEPTION" type="Exception">
+		<en_us>The path to executable cannot be longer than %d characters</en_us>
+		<pt_br>O caminho para o executável não pode ter mais que %d caracteres</pt_br>
+	</text>
+	<text key="PATH_TO_EXECUTABLE_INVALID_SYNTAX_EXCEPTION" type="Exception">
+		<en_us>The path to executable syntax is invalid: %s</en_us>
+		<pt_br>A sintaxe do caminho para o executável é inválida: %s</pt_br>
+	</text>
+
+	<text key="PARAMETERS_FOR_CONNECTION_WITHOUT_AUTHENTICATION_SIZE_STRING_EXCEPTION" type="Exception">
+		<en_us>The maximum number of characters that the parameter list for the connection without authentication can have is %d</en_us>
+		<pt_br>O máximo de caracteres que a lista de parâmetros para a conexão sem autenticação pode ter é %d</pt_br>
+	</text>
+	<text key="PARAMETERS_FOR_CONNECTION_WITHOUT_AUTHENTICATION_INVALID_SYNTAX_EXCEPTION" type="Exception">
+		<en_us>The syntax for the parameters for the connection without authentication is invalid: %s</en_us>
+		<pt_br>A sintaxe para os parâmetros para a conexão sem autenticação é inválida: %s</pt_br>
+	</text>
+
+	<text key="PARAMETERS_FOR_CONNECTION_WITH_VNC_AUTHENTICATION_SIZE_STRING_EXCEPTION" type="Exception">
+		<en_us>The maximum number of characters that the parameter list for a VNC authenticated connection can have is %d</en_us>
+		<pt_br>O máximo de caracteres que a lista de parâmetros para a conexão com autenticação VNC pode ter é %d</pt_br>
+	</text>
+	<text key="PARAMETERS_FOR_CONNECTION_WITH_VNC_AUTHENTICATION_INVALID_SYNTAX_EXCEPTION" type="Exception">
+		<en_us>The syntax for the parameters for the VNC authentication connection is invalid: %s</en_us>
+		<pt_br>A sintaxe para os parâmetros para a conexão com autenticação VNC é inválida: %s</pt_br>
+	</text>	
+
+	<text key="PARAMETERS_FOR_CONNECTION_WITH_ULTRA_VNC_AUTHENTICATION_SIZE_STRING_EXCEPTION" type="Exception">
+		<en_us>The maximum number of characters that the parameter list for a mslogon Ultra VNC authenticated connection can have is %d</en_us>
+		<pt_br>O máximo de caracteres que a lista de parâmetros para a conexão com autenticação Ultra VNC mslogon pode ter é %d</pt_br>
+	</text>
+	<text key="PARAMETERS_FOR_CONNECTION_WITH_ULTRA_VNC_AUTHENTICATION_INVALID_SYNTAX_EXCEPTION" type="Exception">
+		<en_us>The syntax for the parameters for connecting with UltraVNC Mslogon authentication is invalid: %s</en_us>
+		<pt_br>A sintaxe para os parâmetros para a conexão com autenticação UltraVNC Mslogon é inválida: %s</pt_br>
+	</text>
+
+	<text key="PARAMETER_FOR_INTERACTION_SIZE_STRING_EXCEPTION" type="Exception">
+		<en_us>The parameter for the interaction cannot be longer than %d characters</en_us>
+		<pt_br>O parâmetro para a interação não pode ter mais do que %d caracteres</pt_br>
+	</text>
+	<text key="PARAMETER_FOR_INTERACTION_INVALID_SYNTAX_EXCEPTION" type="Exception">
+		<en_us>The parameter syntax for the interaction is invalid: %s</en_us>
+		<pt_br>A sintaxe do parâmetro para a interação é inválida: %s</pt_br>
+	</text>
+	
+	<text key="PARAMETER_FOR_NOT_INTERACTION_SIZE_STRING_EXCEPTION" type="Exception">
+		<en_us>The parameters for the not interaction cannot be longer than %d characters</en_us>
+		<pt_br>Os parâmetros para a não interação não podem ter mais do que %d caracteres</pt_br>
+	</text>
+	<text key="PARAMETER_FOR_NOT_INTERACTION_INVALID_SYNTAX_EXCEPTION" type="Exception">
+		<en_us>The parameter syntax for the not interaction is invalid: %s</en_us>
+		<pt_br>A sintaxe do parâmetro para a não interação é inválida: %s</pt_br>
+	</text>
+
+	<text key="CHECKSUM_STRING_SIZE_EXCEPTION" type="Exception">
+		<en_us>Checksum must contain %d characters</en_us>
+		<pt_br>O checksum deve possuir %d caracteres</pt_br>
+	</text>
+	<text key="CHECKSUM_INVALID_FORMAT_EXCEPTION" type="Exception">
+		<en_us>The checksum must be a hexadecimal text containing characters from 0 to 9 and/or from 'a' to 'f' in lowercase or uppercase</en_us>
+		<pt_br>O checksum deve ser um texto em hexadecimal contendo caracteres de 0 a 9 e/ou de 'a' a 'f' em minúsculo ou maiúsculo</pt_br>
+	</text>
+
+	<text key="TIMEOUT_INVALID_VALUE_EXCEPTION" type="Exception">
+		<en_us>The minimum value for connection timeout must be %d seconds and the maximum %d seconds</en_us>
+		<pt_br>O valor mínimo para o tempo de conexão deve ser de %d segundo e o máximo %d</pt_br>
+	</text>
+</language>

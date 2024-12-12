@@ -5,7 +5,6 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
 import java.util.concurrent.RunnableFuture;
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 import com.quazzom.javis.administrator.Administrator;
@@ -13,14 +12,11 @@ import com.quazzom.javis.administrator.AdministratorSingleton;
 import com.quazzom.javis.administrator.gui.dialog.JDialogMessages;
 import com.quazzom.javis.administrator.gui.dialog.JDialogQuestions;
 import com.quazzom.javis.administrator.gui.dialog.JDialogType;
-import com.quazzom.javis.administrator.images.ImagePathToFile;
-import com.quazzom.javis.administrator.images.SwingImages;
 import com.quazzom.javis.administrator.lang.Text;
 
 public class SwingCommons {
 
   private Administrator administrator;
-  private ImageIcon imageProgramIcon16x16;
 
   public SwingCommons() {
     this(AdministratorSingleton.getInstance());
@@ -28,7 +24,6 @@ public class SwingCommons {
 
   public SwingCommons(Administrator administrator) {
     this.administrator = administrator;
-    imageProgramIcon16x16 = SwingImages.getImageIcon(ImagePathToFile.ICON_JAVIS_16_X_16);
   }
 
   public String createTitle() {
@@ -68,13 +63,7 @@ public class SwingCommons {
 
     invokeAndWait(
         () -> {
-          new JDialogMessages(
-              parentFrame,
-              imageProgramIcon16x16.getImage(),
-              type,
-              title,
-              messageToShow,
-              jDialogTextLanguage);
+          new JDialogMessages(parentFrame, type, title, messageToShow, jDialogTextLanguage);
         });
   }
 
@@ -100,7 +89,7 @@ public class SwingCommons {
               @Override
               public Integer call() throws Exception {
                 JDialogQuestions jq = new JDialogQuestions(parentFrame, jQuestionTextLanguage);
-                return jq.showChoose(message, imageProgramIcon16x16.getImage(), options, defaultOption);
+                return jq.showChoose(message, options, defaultOption);
               }
             });
 

@@ -9,21 +9,25 @@ import com.quazzom.javis.administrator.gui.internal_frame.LoginInternalFrame;
 public class LoginInternalFrameController extends InternalFrameController {
 
   private LoginInternalFrame loginInternalFrame;
+  private ControllersMediator controllersMediator;
 
   public LoginInternalFrameController(
-      GeneralConfiguration generalConfiguration, SwingMediator swingMediator) {
+      GeneralConfiguration generalConfiguration,
+      SwingMediator swingMediator,
+      ControllersMediator controllersMediator) {
     super(generalConfiguration, swingMediator);
+    this.controllersMediator = controllersMediator;
   }
 
   public void leaveTheProgram() {
-    swingMediator.showExitProgram();
+    controllersMediator.showExitProgram();
   }
 
   public void makeLogin(String user, String password) {
     SwingMakeLogin swingMakeLogin = new SwingMakeLogin(generalConfiguration, swingMediator);
     if (swingMakeLogin.makeLogin(user, password)) {
-      swingMediator.removeInternalFrame(loginInternalFrame);
-      swingMediator.showMainInternalFrame();
+      controllersMediator.removeInternalFrame(loginInternalFrame);
+      controllersMediator.showMainInternalFrame();
     }
   }
 

@@ -1,9 +1,10 @@
 package com.quazzom.javis.administrator.gui.dialog;
 
-import java.awt.Dimension;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import com.quazzom.javis.administrator.gui.SwingCommons;
+import com.quazzom.javis.administrator.images.ImagePathToFile;
+import com.quazzom.javis.administrator.images.SwingImages;
 
 public class JDialogDefault extends JDialog {
 
@@ -15,8 +16,7 @@ public class JDialogDefault extends JDialog {
     super(jFrameParent, isModal);
     swingCommons = new SwingCommons();
     setResizable(false);
-    setSize(new Dimension(680, 300));
     setTitle(swingCommons.createTitle());
-    setLocationRelativeTo(jFrameParent);
+    setIconImage(SwingImages.getImage(ImagePathToFile.ICON_JAVIS_16_X_16));
   }
 }

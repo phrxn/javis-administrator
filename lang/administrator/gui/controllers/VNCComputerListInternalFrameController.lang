@@ -15,4 +15,24 @@
 		<en_us>Unable to create the computer</en_us>
 		<pt_br>Não foi possível criar o computador</pt_br>
 	</text>
+	<text key="FIND_VNC_CONFIGURATION_ERROR" type="Error">
+		<en_us>Unable to fetch VNC Configuration</en_us>
+		<pt_br>Não foi possível buscar a configuração VNC</pt_br>
+	</text>
+	<text key="WITHOUT_VNC_CONFIGURATION_ERROR" type="Error">
+		<en_us>There is no registered VNC configuration</en_us>
+		<pt_br>Não há nenhuma configuração VNC registrada</pt_br>
+	</text>
+	<text key="WITHOUT_VNC_CONFIGURATION_ERROR_MESSAGE" type="Error">
+		<en_us>You will not be able to proceed with the connection to the client computer if there is no VNC configuration created. Please check the VNC Configuration option and define a VNC program for access</en_us>
+		<pt_br>Não será possível prosseguir com a conexão ao computador cliente se não houver nenhuma configuração VNC Criado. Por favor, verifique a opção de Configuração VNC e defina um programa VNC para acesso</pt_br>
+	</text>
+	<text key="AUTHENTICATION_METHOD_NOT_SUPPORTED_ERROR" type="Error">
+		<en_us>Authentication method not supported</en_us>
+		<pt_br>Método de autenticação não suportado</pt_br>
+	</text>
+	<text key="AUTHENTICATION_METHOD_NOT_SUPPORTED_DETAILS_ERROR" type="Error">
+		<en_us>The VNC client does not provide authentication means that are used by Javis Administrator: (No Authentication, VNC Authentication and Ultra VNC Mslogon)</en_us>
+		<pt_br>O cliente VNC não fornece meios de autenticação que são utilizadas pelo Javis Administrator: (sem autenticação, autenticação VNC e Ultra VNC Mslogon)</pt_br>
+	</text>
 </language>

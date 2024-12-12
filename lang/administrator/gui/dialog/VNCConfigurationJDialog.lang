@@ -1,0 +1,73 @@
+<language class="VNCConfigurationJDialog">
+	<text key="jButtonCancel" type="Text">
+		<en_us>Cancel</en_us>
+		<pt_br>Cancelar</pt_br>
+	</text>
+	<text key="jButtonDeleteVNCConfigurations" type="Text">
+		<en_us>Delete</en_us>
+		<pt_br>Excluir</pt_br>
+	</text>
+	<text key="jButtonOk" type="Text">
+		<en_us>Ok</en_us>
+		<pt_br>Ok</pt_br>
+	</text>
+	<text key="jButtonPathToExecutable" type="Text">
+		<en_us>File...</en_us>
+		<pt_br>Arquivo...</pt_br>
+	</text>
+	<text key="jLabelVncName" type="Text">
+		<en_us>Configuration name</en_us>
+		<pt_br>Nome da configuração</pt_br>
+	</text>
+	<text key="jLabelExecutionLine" type="Text">
+		<en_us>Execution Line</en_us>
+		<pt_br>Linha de execução</pt_br>
+	</text>
+	<text key="jLabelDefaultPortToAccess" type="Text">
+		<en_us>Default port to access</en_us>
+		<pt_br>Porta padrão de acesso</pt_br>
+	</text>
+	<text key="jLabelPathToExecutable" type="Text">
+		<en_us>Path to executable</en_us>
+		<pt_br>Caminho para o executável</pt_br>
+	</text>
+	<text key="jLabelCheckSum" type="Text">
+		<en_us>Executable checksum</en_us>
+		<pt_br>Checksum do executável</pt_br>
+	</text>
+	<text key="jCheckBoxIsToUseChecksum" type="Text">
+		<en_us>Verify the VNC program checksum before running it (highly recommended)</en_us>
+		<pt_br>Verificar o checksum do programa VNC antes de executá-lo (altamente recomendado)</pt_br>
+	</text>
+	<text key="jLabelConnectionTimeoutInSeconds" type="Text">
+		<en_us>Connection timeout (in sec.)</en_us>
+		<pt_br>Tempo limite para conexão (em seg.)</pt_br>
+	</text>
+	<text key="jLabelParametersToConnectionWithNoAuthentication"
+		type="Text">
+		<en_us>No authentication</en_us>
+		<pt_br>Sem autenticação</pt_br>
+	</text>
+	<text key="jLabelParametersToConnectionWithVNCAuthentication"
+		type="Text">
+		<en_us>VNC authentication</en_us>
+		<pt_br>Autenticação VNC</pt_br>
+	</text>
+	<text key="jLabelParametersToConnectionWithUltraVNCAuthentication"
+		type="Text">
+		<en_us>Ultra VNC mslogon</en_us>
+		<pt_br>Ultra VNC mslogon</pt_br>
+	</text>
+	<text key="jLabelParameterForInteraction" type="Text">
+		<en_us>Parameter for interaction</en_us>
+		<pt_br>Parâmetro para interação</pt_br>
+	</text>
+	<text key="jLabelParameterForNotInteraction" type="Text">
+		<en_us>Parameter for non-interaction</en_us>
+		<pt_br>Parâmetro para a não interação</pt_br>
+	</text>
+	<text key="INVALID_VNC_CONFIGURATION_INFORMATION" type="Error">
+		<en_us>Invalid data in configuration</en_us>
+		<pt_br>Dados inválidos na configuração</pt_br>
+	</text>
+</language>

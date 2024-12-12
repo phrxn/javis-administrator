@@ -1,0 +1,6 @@
+<language class="VNCProgramConfiguration">
+	<text key="RFB_SESSION_CONNECTION_ERROR" type="Error">
+		<en_us>Unable to communicate with the client computer</en_us>
+		<pt_br>Não foi possível se comunicar com o computador cliente</pt_br>
+	</text>
+</language>

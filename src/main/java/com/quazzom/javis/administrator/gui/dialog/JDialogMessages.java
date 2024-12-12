@@ -4,7 +4,6 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Font;
-import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.BorderFactory;
@@ -17,7 +16,7 @@ import com.quazzom.javis.administrator.lang.LanguageInMemory;
 import com.quazzom.javis.administrator.lang.LanguagePathToFile;
 import com.quazzom.javis.administrator.lang.Text;
 
-public class JDialogMessages extends JDialogDefault implements ActionListener {
+public class JDialogMessages extends JDialogInputAndOutputs implements ActionListener {
 
   private static final long serialVersionUID = 1L;
 
@@ -30,7 +29,6 @@ public class JDialogMessages extends JDialogDefault implements ActionListener {
   private String title;
   private String messageToShow;
   private Text text;
-  private Image imageIcon;
 
   public JDialogMessages() {
     this(null, JDialogType.INFO, "the title", "message");
@@ -47,18 +45,7 @@ public class JDialogMessages extends JDialogDefault implements ActionListener {
 
   public JDialogMessages(
       JFrame parent, JDialogType type, String title, String messageToShow, Text text) {
-    this(parent, null, type, title, messageToShow, text);
-  }
-
-  public JDialogMessages(
-      JFrame parent,
-      Image imageIcon,
-      JDialogType type,
-      String title,
-      String messageToShow,
-      Text text) {
     super(parent, true);
-    this.imageIcon = imageIcon;
     this.type = type;
     this.title = title;
     this.messageToShow = messageToShow;
@@ -101,7 +88,6 @@ public class JDialogMessages extends JDialogDefault implements ActionListener {
     getRootPane().setDefaultButton(jButtonClose);
     jButtonClose.requestFocusInWindow();
 
-    setIconImage(imageIcon);
     setContentPane(jPanelRoot);
     setVisible(true);
   }

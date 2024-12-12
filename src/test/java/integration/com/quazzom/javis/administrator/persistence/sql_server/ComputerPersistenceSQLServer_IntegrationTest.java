@@ -1,4 +1,4 @@
-package integration.com.quazzom.javis.administrator.persistence;
+package integration.com.quazzom.javis.administrator.persistence.sql_server;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -7,7 +7,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.when;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Date;
@@ -17,9 +16,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import com.quazzom.javis.administrator.lang.Text;
-import com.quazzom.javis.administrator.persistence.ComputerPersistenceSQLServer;
-import com.quazzom.javis.administrator.persistence.ConnectionFactory;
 import com.quazzom.javis.administrator.persistence.PersistenceException;
+import com.quazzom.javis.administrator.persistence.sql_server.ComputerPersistenceSQLServer;
 import com.quazzom.javis.administrator.vnc.Computer;
 import com.quazzom.javis.administrator.vnc.Computer.PowerStatus;
 import com.quazzom.javis.administrator.vnc.Computer.TypeOfLoginSession;
@@ -36,7 +34,7 @@ public class ComputerPersistenceSQLServer_IntegrationTest {
     Text textMock = Mockito.mock(Text.class);
 
     ComputerPersistenceSQLServer cps =
-        new ComputerPersistenceSQLServer(new ConnectionFactoryTest(), textMock);
+        new ComputerPersistenceSQLServer(new ConnectionFactorySQLServerTest(), textMock);
 
     Computer firstComputer = new Computer();
     firstComputer.setUsername("first_user");
@@ -72,7 +70,7 @@ public class ComputerPersistenceSQLServer_IntegrationTest {
         .thenReturn("xxxx");
 
     ComputerPersistenceSQLServer cps =
-        new ComputerPersistenceSQLServer(new ConnectionFactoryTest(), textMock);
+        new ComputerPersistenceSQLServer(new ConnectionFactorySQLServerTest(), textMock);
 
     Computer firstComputer = new Computer();
     firstComputer.setUsername("first_user");
@@ -102,7 +100,7 @@ public class ComputerPersistenceSQLServer_IntegrationTest {
     Text textMock = Mockito.mock(Text.class);
 
     ComputerPersistenceSQLServer cps =
-        new ComputerPersistenceSQLServer(new ConnectionFactoryTest(), textMock);
+        new ComputerPersistenceSQLServer(new ConnectionFactorySQLServerTest(), textMock);
 
     Computer computerToDelete = new Computer();
     computerToDelete.setUsername("to delete u");
@@ -122,7 +120,7 @@ public class ComputerPersistenceSQLServer_IntegrationTest {
     Text textMock = Mockito.mock(Text.class);
 
     ComputerPersistenceSQLServer cps =
-        new ComputerPersistenceSQLServer(new ConnectionFactoryTest(), textMock);
+        new ComputerPersistenceSQLServer(new ConnectionFactorySQLServerTest(), textMock);
 
     Computer computerToDelete = new Computer();
 
@@ -140,7 +138,7 @@ public class ComputerPersistenceSQLServer_IntegrationTest {
     when(textMock.getText("FIND_BY_ID_NOT_FOUND_EXCEPTION", 1)).thenReturn("not found");
 
     ComputerPersistenceSQLServer cps =
-        new ComputerPersistenceSQLServer(new ConnectionFactoryTest(), textMock);
+        new ComputerPersistenceSQLServer(new ConnectionFactorySQLServerTest(), textMock);
 
     PersistenceException pe =
         assertThrows(
@@ -160,7 +158,7 @@ public class ComputerPersistenceSQLServer_IntegrationTest {
     when(textMock.getText("FIND_BY_ID_NOT_FOUND_EXCEPTION", 1)).thenReturn("not found");
 
     ComputerPersistenceSQLServer cps =
-        new ComputerPersistenceSQLServer(new ConnectionFactoryTest(), textMock);
+        new ComputerPersistenceSQLServer(new ConnectionFactorySQLServerTest(), textMock);
 
     Computer computerToSave = new Computer();
     computerToSave.setPowerStatus(PowerStatus.INVALID);
@@ -189,7 +187,7 @@ public class ComputerPersistenceSQLServer_IntegrationTest {
     Text textMock = Mockito.mock(Text.class);
 
     ComputerPersistenceSQLServer cps =
-        new ComputerPersistenceSQLServer(new ConnectionFactoryTest(), textMock);
+        new ComputerPersistenceSQLServer(new ConnectionFactorySQLServerTest(), textMock);
 
     Computer computerToUpdate1 = new Computer();
 
@@ -294,7 +292,7 @@ public class ComputerPersistenceSQLServer_IntegrationTest {
     Text textMock = Mockito.mock(Text.class);
 
     ComputerPersistenceSQLServer cps =
-        new ComputerPersistenceSQLServer(new ConnectionFactoryTest(), textMock);
+        new ComputerPersistenceSQLServer(new ConnectionFactorySQLServerTest(), textMock);
 
     Computer computer1 = new Computer();
 
@@ -368,7 +366,7 @@ public class ComputerPersistenceSQLServer_IntegrationTest {
 
   private static void clearAndResetComputerTable() throws SQLException {
 
-    ConnectionFactoryTest cft = new ConnectionFactoryTest();
+    ConnectionFactorySQLServerTest cft = new ConnectionFactorySQLServerTest();
 
     Connection conn = cft.getConnection();
     Statement stmt = conn.createStatement();
@@ -388,29 +386,6 @@ public class ComputerPersistenceSQLServer_IntegrationTest {
   @AfterAll
   public static void clearTable() throws SQLException {
     clearAndResetComputerTable();
-  }
-
-  private static class ConnectionFactoryTest implements ConnectionFactory {
-
-    public Connection getConnection() throws SQLException {
-
-      String ip = "192.168.50.62";
-      String port = "1433";
-      String name = "javis_test";
-      String user = "javis_test";
-      String password = "javis_test";
-
-      Connection con;
-
-      String sql =
-          String.format(
-              "jdbc:sqlserver://%s:%s;databaseName=%s;user=%s;password=%s;encrypt=false;trustServerCertificate=false;",
-              //
-              ip, port, name, user, password);
-      con = DriverManager.getConnection(sql);
-      con.setAutoCommit(false);
-      return con;
-    }
   }
 
   //

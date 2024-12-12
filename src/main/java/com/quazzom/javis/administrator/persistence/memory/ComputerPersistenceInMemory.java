@@ -1,4 +1,4 @@
-package com.quazzom.javis.administrator.persistence;
+package com.quazzom.javis.administrator.persistence.memory;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -6,6 +6,8 @@ import java.util.List;
 import com.quazzom.javis.administrator.lang.LanguageFactory;
 import com.quazzom.javis.administrator.lang.LanguagePathToFile;
 import com.quazzom.javis.administrator.lang.Text;
+import com.quazzom.javis.administrator.persistence.ComputerPersistence;
+import com.quazzom.javis.administrator.persistence.PersistenceException;
 import com.quazzom.javis.administrator.vnc.Computer;
 import com.quazzom.javis.administrator.vnc.Computer.PowerStatus;
 import com.quazzom.javis.administrator.vnc.Computer.TypeOfLoginSession;

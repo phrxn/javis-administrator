@@ -1,4 +1,4 @@
-package unit.com.quazzom.javis.administrator.persistence;
+package unit.com.quazzom.javis.administrator.persistence.memory;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -11,8 +11,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import com.quazzom.javis.administrator.lang.Text;
-import com.quazzom.javis.administrator.persistence.ComputerPersistenceInMemory;
 import com.quazzom.javis.administrator.persistence.PersistenceException;
+import com.quazzom.javis.administrator.persistence.memory.ComputerPersistenceInMemory;
 import com.quazzom.javis.administrator.vnc.Computer;
 import com.quazzom.javis.administrator.vnc.ComputerException;
 import com.quazzom.javis.administrator.vnc.IP;

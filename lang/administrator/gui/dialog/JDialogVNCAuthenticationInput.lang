@@ -1,0 +1,22 @@
+<language class="JDialogVNCAuthenticationInput">
+	<text key="JBUTTON_OK" type="Text">
+		<en_us>Ok</en_us>
+		<pt_br>Ok</pt_br>
+	</text>
+	<text key="JBUTTON_CANCEL" type="Text">
+		<en_us>Cancel</en_us>
+		<pt_br>Cancelar</pt_br>
+	</text>
+	<text key="jLabelPassword" type="Text">
+		<en_us>Password</en_us>
+		<pt_br>Senha</pt_br>
+	</text>
+	<text key="jCheckBoxSaveCredentials" type="Text">
+		<en_us>Save credentials</en_us>
+		<pt_br>Salvar as credenciais</pt_br>
+	</text>
+	<text key="jPanelMainOnCenterTitleBorder" type="Text">
+		<en_us>VNC Authentication</en_us>
+		<pt_br>Autenticação VNC</pt_br>
+	</text>
+</language>

@@ -4,7 +4,6 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Font;
-import java.awt.Image;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import javax.swing.BorderFactory;
@@ -14,11 +13,12 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import com.quazzom.javis.administrator.AdministratorSingleton;
 import com.quazzom.javis.administrator.gui.panel.JPanelTextPaneWithoutWrap;
+import com.quazzom.javis.administrator.images.ImagePathToFile;
+import com.quazzom.javis.administrator.images.SwingImages;
 import com.quazzom.javis.administrator.lang.Text;
 
-public class JDialogQuestions extends JDialogDefault{
+public class JDialogQuestions extends JDialogInputAndOutputs {
 
   private JPanel jPanelMain;
   private JLabel jLableYouWish;
@@ -32,7 +32,7 @@ public class JDialogQuestions extends JDialogDefault{
   private Text text;
 
   public JDialogQuestions(JFrame parent, Text text) {
-	super(parent, true);
+    super(parent, true);
     this.parent = parent;
     this.text = text;
     startGUI();
@@ -69,7 +69,7 @@ public class JDialogQuestions extends JDialogDefault{
    * @param defaultOption an index to default option
    * @return the index of the chosen option or -1 if no option was chosen
    */
-  public int showChoose(String message, Image imageIcon, String options[], int defaultOption) {
+  public int showChoose(String message, String options[], int defaultOption) {
 
     jPanelAllInformations.appendText(message);
 
@@ -82,8 +82,7 @@ public class JDialogQuestions extends JDialogDefault{
             options,
             options[defaultOption]);
 
-    JDialog dialog =
-        optionPane.createDialog(parent, getTitle());
+    JDialog dialog = optionPane.createDialog(parent, getTitle());
 
     JPanel buttonPanel = (JPanel) optionPane.getComponent(1);
     JButton defaultButton = (JButton) buttonPanel.getComponent(defaultOption);
@@ -123,7 +122,7 @@ public class JDialogQuestions extends JDialogDefault{
           }
         });
 
-    dialog.setIconImage(imageIcon);
+    dialog.setIconImage(SwingImages.getImage(ImagePathToFile.ICON_JAVIS_16_X_16));
     dialog.setVisible(true);
 
     optionPane.selectInitialValue();

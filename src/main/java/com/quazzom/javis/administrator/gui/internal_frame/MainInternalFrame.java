@@ -4,14 +4,14 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.beans.PropertyVetoException;
 import javax.swing.JTabbedPane;
-import com.quazzom.javis.administrator.gui.SwingMediator;
+import com.quazzom.javis.administrator.gui.controllers.ControllersMediator;
 import com.quazzom.javis.administrator.gui.panel.JPanelMainInternalFrameVNC;
 
 public class MainInternalFrame extends RootInternalFrame {
 
   private JTabbedPane jTabbedPane;
 
-  public MainInternalFrame(SwingMediator swingMediator) {
+  public MainInternalFrame(ControllersMediator controllersMediator) {
     super(
         "", // title
         false, // resizable
@@ -21,7 +21,7 @@ public class MainInternalFrame extends RootInternalFrame {
 
     jTabbedPane = new JTabbedPane(JTabbedPane.TOP);
 
-    jTabbedPane.addTab("VNC", null, new JPanelMainInternalFrameVNC(swingMediator), null);
+    jTabbedPane.addTab("VNC", null, new JPanelMainInternalFrameVNC(controllersMediator), null);
 
     getContentPane().add(jTabbedPane, BorderLayout.CENTER);
 

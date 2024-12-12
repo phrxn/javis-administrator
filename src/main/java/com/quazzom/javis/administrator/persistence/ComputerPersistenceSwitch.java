@@ -2,6 +2,9 @@ package com.quazzom.javis.administrator.persistence;
 
 import java.util.List;
 import com.quazzom.javis.administrator.configuration.GeneralConfiguration;
+import com.quazzom.javis.administrator.persistence.memory.ComputerPersistenceInMemory;
+import com.quazzom.javis.administrator.persistence.sql_server.ComputerPersistenceSQLServer;
+import com.quazzom.javis.administrator.persistence.sql_server.ConnectionFactorySQLServer;
 import com.quazzom.javis.administrator.vnc.Computer;
 
 public class ComputerPersistenceSwitch implements ComputerPersistence {

@@ -1,6 +1,10 @@
 <language class="JPanelMainInternalFrameVNC">
-	<text key="JBUTTON_TO_PANELS_INSIDE_MAIN_INTERNAL_FRAME" type="Text">
+	<text key="JBUTTON_COMPUTER_LIST" type="Text">
 		<en_us>Computers List</en_us>
 		<pt_br>Lista de computadores</pt_br>
+	</text>
+	<text key="JBUTTON_VNC_CONFIGURATION_SCREEN" type="Text">
+		<en_us>VNC Configuration</en_us>
+		<pt_br>Configuração do VNC</pt_br>
 	</text>
 </language>

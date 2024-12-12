@@ -207,7 +207,7 @@ public class VNCComputerListInternalFrame extends ClosableInternalFrame {
         return;
       }
       if (e.getSource().equals(jMenuItemVNCOpenScreenToConnection)) {
-        return;
+        vNCComputerListInternalFrameController.vNCOpenScreenToConnection();
       }
     }
   }

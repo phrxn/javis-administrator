@@ -1,0 +1,14 @@
+<language class="VNCConfigurationJDialogController">
+	<text key="CREATE_VNC_CONFIGURATION_JDIALOG_ERROR" type="Error">
+		<en_us>Unable to create VNC Configuration screen</en_us>
+		<pt_br>Não foi possível criar a tela de Configuração do VNC</pt_br>
+	</text>
+	<text key="UPDATE_PERSISTENCE_VNC_CONFIGURATION_ERROR" type="Error">
+		<en_us>Unable to create VNC Configuration screen</en_us>
+		<pt_br>Não foi possível criar a tela de Configuração do VNC</pt_br>
+	</text>
+	<text key="CHECKSUM_FILE_ERROR" type="Error">
+		<en_us>Could not checksum file</en_us>
+		<pt_br>Não foi possível fazer o checksum do arquivo</pt_br>
+	</text>
+</language>

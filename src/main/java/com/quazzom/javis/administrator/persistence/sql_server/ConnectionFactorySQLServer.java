@@ -1,4 +1,4 @@
-package com.quazzom.javis.administrator.persistence;
+package com.quazzom.javis.administrator.persistence.sql_server;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -12,6 +12,7 @@ import com.quazzom.javis.administrator.configuration.SQLServerConnectionInformat
 import com.quazzom.javis.administrator.lang.LanguageFactory;
 import com.quazzom.javis.administrator.lang.LanguagePathToFile;
 import com.quazzom.javis.administrator.lang.Text;
+import com.quazzom.javis.administrator.persistence.ConnectionFactory;
 
 public class ConnectionFactorySQLServer implements ConnectionFactory {
 

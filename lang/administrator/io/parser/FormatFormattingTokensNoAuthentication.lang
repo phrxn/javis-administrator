@@ -1,0 +1,6 @@
+<language class="FormatFormattingTokensNoAuthentication">
+	<text key="FORMATTING_TOKEN_FOMATTER_MISSING_EXCEPTION" type="Exception">
+		<en_us>The command line must contain the format string %s</en_us>
+		<pt_br>A linha de commando deve possuir a string de formatação %s</pt_br>
+	</text>
+</language>

@@ -1,0 +1,22 @@
+<language class="JDialogVNCComputer">
+	<text key="JBUTTON_OK" type="Text">
+		<en_us>Ok</en_us>
+		<pt_br>Ok</pt_br>
+	</text>
+	<text key="JBUTTON_CANCEL" type="Text">
+		<en_us>Cancel</en_us>
+		<pt_br>Cancelar</pt_br>
+	</text>
+	<text key="JLABEL_HOSTNAME" type="Text">
+		<en_us>Hostname</en_us>
+		<pt_br>Nome do computador</pt_br>
+	</text>
+	<text key="JLABEL_PORT" type="Text">
+		<en_us>Port</en_us>
+		<pt_br>Porta</pt_br>
+	</text>
+	<text key="TITLE_TO_INVALID_COMPUTER_INFORMATION" type="Text">
+		<en_us>Invalid computer information</en_us>
+		<pt_br>Informação do computador inválida</pt_br>
+	</text>
+</language>

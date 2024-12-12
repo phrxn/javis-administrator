@@ -262,7 +262,6 @@ public class JTableComputers extends JTable {
 
     private JMenuItem jMenuItemVNCAccessTheComputerOnlyToView;
     private JMenuItem jMenuItemVNCAccessTheComputerAndInteract;
-    private JMenuItem jMenuItemVNCAccessTheComputerWithCredentials;
     // --
     private JMenuItem jMenuItemCopyCellContent;
     // --
@@ -290,18 +289,14 @@ public class JTableComputers extends JTable {
           new JMenuItem(theLanguage.getText("JMENUITEM_VNC_ACCESS_THE_COMPUTER_ONLY_TO_VIEW"));
       jMenuItemVNCAccessTheComputerAndInteract =
           new JMenuItem(theLanguage.getText("JMENUITEM_VNC_ACCESS_THE_COMPUTER_AND_INTERACT"));
-      jMenuItemVNCAccessTheComputerWithCredentials =
-          new JMenuItem(theLanguage.getText("JMENUITEM_VNC_ACCESS_THE_COMPUTER_WITH_CREDENTIALS"));
 
       jMenuItemVNCAccessTheComputerOnlyToView.addActionListener(jMenuItemComputer);
       jMenuItemVNCAccessTheComputerAndInteract.addActionListener(jMenuItemComputer);
-      jMenuItemVNCAccessTheComputerWithCredentials.addActionListener(jMenuItemComputer);
 
       JMenu jMenuVNCConnectionOptions =
           new JMenu(theLanguage.getText("JMENU_VNC_CONNECTION_OPTIONS"));
       jMenuVNCConnectionOptions.add(jMenuItemVNCAccessTheComputerOnlyToView);
       jMenuVNCConnectionOptions.add(jMenuItemVNCAccessTheComputerAndInteract);
-      jMenuVNCConnectionOptions.add(jMenuItemVNCAccessTheComputerWithCredentials);
       add(jMenuVNCConnectionOptions);
 
       jMenuItemCopyCellContent = new JMenuItem(theLanguage.getText("JMENUITEM_COPY_CELL_CONTENT"));
@@ -336,8 +331,6 @@ public class JTableComputers extends JTable {
           vNCAccessTheComputerOnlyToView(computer);
         } else if (e.getSource().equals(jMenuItemVNCAccessTheComputerAndInteract)) {
           vNCAccessTheComputerAndInteract(computer);
-        } else if (e.getSource().equals(jMenuItemVNCAccessTheComputerWithCredentials)) {
-          vNCAccessTheComputerWithCredentials(computer);
         } else if (e.getSource().equals(jMenuItemCopyCellContent)) {
           copyCellContent();
         } else if (e.getSource().equals(jMenuItemComputerUpdate)) {
@@ -353,10 +346,6 @@ public class JTableComputers extends JTable {
 
       private void vNCAccessTheComputerAndInteract(Computer computer) {
         vncComputerListInternalFrameController.vNCAccessTheComputerAndInteract(computer);
-      }
-
-      private void vNCAccessTheComputerWithCredentials(Computer computer) {
-        vncComputerListInternalFrameController.vNCAccessTheComputerWithCredentials(computer);
       }
 
       private void copyCellContent() {

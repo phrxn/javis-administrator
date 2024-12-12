@@ -3,31 +3,35 @@ package com.quazzom.javis.administrator.gui;
 import java.awt.Dimension;
 import java.beans.PropertyVetoException;
 import javax.swing.JDesktopPane;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JInternalFrame;
 import com.quazzom.javis.administrator.configuration.GeneralConfiguration;
-import com.quazzom.javis.administrator.gui.controllers.InternalFrameController;
-import com.quazzom.javis.administrator.gui.controllers.LoginInternalFrameController;
 import com.quazzom.javis.administrator.gui.controllers.VNCComputerListInternalFrameController;
+import com.quazzom.javis.administrator.gui.controllers.VNCConfigurationJDialogController;
 import com.quazzom.javis.administrator.gui.dialog.JDialogComputer;
 import com.quazzom.javis.administrator.gui.dialog.JDialogInteraction;
 import com.quazzom.javis.administrator.gui.dialog.JDialogType;
+import com.quazzom.javis.administrator.gui.dialog.JDialogUltraVNCMslogonAuthenticationInput;
+import com.quazzom.javis.administrator.gui.dialog.JDialogVNCAuthenticationInput;
+import com.quazzom.javis.administrator.gui.dialog.JDialogVNCComputer;
 import com.quazzom.javis.administrator.gui.dialog.JDialogYesCancelOption;
-import com.quazzom.javis.administrator.gui.internal_frame.MainInternalFrame;
+import com.quazzom.javis.administrator.gui.dialog.VNCProgramConfigurationJDialog;
 import com.quazzom.javis.administrator.gui.internal_frame.RootInternalFrame;
 import com.quazzom.javis.administrator.lang.LanguageFactory;
 import com.quazzom.javis.administrator.lang.LanguagePathToFile;
 import com.quazzom.javis.administrator.lang.Text;
 import com.quazzom.javis.administrator.vnc.Computer;
+import com.quazzom.javis.administrator.vnc.ComputerConnectionInformations;
+import com.quazzom.javis.administrator.vnc.UltraVNCMslogonAuthentication;
+import com.quazzom.javis.administrator.vnc.VNCAuthentication;
+import com.quazzom.javis.administrator.vnc.VNCProgramConfiguration;
 
 public class SwingMediator {
 
   private JFrame administratorFrame;
   private JDesktopPane jDesktopPane;
   private SwingCommons swingCommons;
-
-  private InternalFrameController vNCComputerListInternalFrameController;
-  private InternalFrameController loginInternalFrameController;
 
   public SwingMediator(
       GeneralConfiguration generalConfiguration,
@@ -36,11 +40,6 @@ public class SwingMediator {
     this.administratorFrame = administratorFrame;
     this.jDesktopPane = jDesktopPane;
     this.swingCommons = new SwingCommons();
-
-    this.vNCComputerListInternalFrameController =
-        new VNCComputerListInternalFrameController(generalConfiguration, this);
-    this.loginInternalFrameController =
-        new LoginInternalFrameController(generalConfiguration, this);
   }
 
   public JFrame getJFrameAdministratorFrame() {
@@ -82,23 +81,6 @@ public class SwingMediator {
     return new Dimension(x, y);
   }
 
-  // -------------- show methods  --------------
-
-  public void showLoginInternalFrame() {
-    loginInternalFrameController.showInternalFrame();
-  }
-
-  public void showVNCComputerListInternalFrame() {
-    vNCComputerListInternalFrameController.showInternalFrame();
-  }
-
-  public void showMainInternalFrame() {
-
-    MainInternalFrame mainInternalFrame = new MainInternalFrame(this);
-
-    jDesktopPane.add(mainInternalFrame);
-  }
-
   public void showJDialogComputerCreate(
       VNCComputerListInternalFrameController vncComputerListInternalFrameController) {
     new JDialogComputer(administratorFrame, this, vncComputerListInternalFrameController);
@@ -111,6 +93,41 @@ public class SwingMediator {
         computerToUpdate, administratorFrame, this, vncComputerListInternalFrameController);
   }
 
+  public void showJDialogVNCConfiguration(
+      VNCConfigurationJDialogController vncConfigurationJDialogController,
+      VNCProgramConfiguration vncConfiguration) {
+
+    VNCProgramConfigurationJDialog vncConfigurationJDialog =
+        new VNCProgramConfigurationJDialog(
+            vncConfigurationJDialogController, this, vncConfiguration);
+  }
+
+  public JDialogYesCancelOption showJDialogVNCComputer(
+      ComputerConnectionInformations computerInfos) {
+
+    JDialogVNCComputer jDialogVNCComputer = new JDialogVNCComputer(this, computerInfos);
+
+    return jDialogVNCComputer.createJDialog();
+  }
+
+  public JDialogYesCancelOption showJDialogVNCAuthenticationInput(
+      VNCAuthentication vncAuthentication) {
+
+    JDialogVNCAuthenticationInput jDialogVNCAuthenticationInput =
+        new JDialogVNCAuthenticationInput(this, vncAuthentication);
+
+    return jDialogVNCAuthenticationInput.createJDialog();
+  }
+
+  public JDialogYesCancelOption showJDialogUltraVNCMslogonAuthenticationInput(
+      UltraVNCMslogonAuthentication ultraAuthentication) {
+
+    JDialogUltraVNCMslogonAuthenticationInput jDialogUltra =
+        new JDialogUltraVNCMslogonAuthenticationInput(this, ultraAuthentication);
+
+    return jDialogUltra.createJDialog();
+  }
+
   public JDialogYesCancelOption showYesCancelOptions(String message) {
     JDialogInteraction jdi = new JDialogInteraction(administratorFrame);
     return jdi.showYesCancelOptions(message);
@@ -121,11 +138,6 @@ public class SwingMediator {
     Text language = LanguageFactory.getLanguage(LanguagePathToFile.JDIALOG_MESSAGES);
 
     swingCommons.showJDialogMessage(administratorFrame, type, title, messageToShow, language);
-  }
-
-  public void showExitProgram() {
-    SwingExitProgram swingExitProgram = new SwingExitProgram(this);
-    swingExitProgram.closeTheProgram();
   }
 
   // -------------- private methods  --------------
@@ -156,5 +168,22 @@ public class SwingMediator {
     int y = (desktopHeight - frameHeight) / 2;
 
     internalFrame.setLocation(x, y);
+  }
+
+  /* returns the absolute path to a file if the user selected a file, or an empty
+   * string if the user did not select anything or canceled the operation */
+  public String showSelectFileAbsolutePath() {
+
+    JFileChooser fileChooser = new JFileChooser();
+
+    fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+
+    int result = fileChooser.showOpenDialog(administratorFrame);
+
+    if (result == JFileChooser.APPROVE_OPTION) {
+      return fileChooser.getSelectedFile().getAbsolutePath();
+    }
+
+    return "";
   }
 }

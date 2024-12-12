@@ -48,7 +48,23 @@ public enum LanguagePathToFile {
   JDIALOG_ULTRA_VNC_MS_LOGON_AUTHENTICATION_INPUT(
       "administrator/gui/dialog/JDialogUltraVNCMslogonAuthenticationInput.lang"),
   JDIALOG_VNC_AUTHENTICATION_INPUT("administrator/gui/dialog/JDialogVNCAuthenticationInput.lang"),
-  TOKENIZER("administrator/io/parser/Tokenizer.lang");
+  GRAMMAR("administrator/io/parser/Grammar.lang"),
+  FORMAT_FORMATTING_TOKENS_NO_AUTHENTICATION(
+      "administrator/io/parser/FormatFormattingTokensNoAuthentication.lang"),
+  FORMAT_FORMATTING_TOKENS_VNC_AUTHENTICATION(
+      "administrator/io/parser/FormatFormattingTokensVNCAuthentication.lang"),
+  FORMAT_FORMATTING_TOKENS_ULTRA_VNC_MSLOGON_AUTHENTICATION(
+      "administrator/io/parser/FormatFormattingTokensUltraVNCMslogonAuthentication.lang"),
+  VNC_AUTHENTICATION_NEGOTIATOR_NETWORK(
+      "administrator/vnc/VNCAuthenticationNegotiatorNetwork.lang"),
+  VNC_PROCESS_CREATOR_IN_SYSTEM("administrator/io/VNCProcessCreatorInSystem.lang"),
+  NO_AUTHENTICATION_CREATEPARAMETERS_TO_EXECUTABLE(
+      "administrator/vnc/NoAuthenticationCreateParametersToExecutable.lang"),
+  ULTRA_VNC_MSLOGON_AUTHENTICATION_CREATE_PARAMETERS_TO_EXECUTABLE(
+      "administrator/vnc/UltraVNCMslogonAuthenticationCreateParametersToExecutable.lang"),
+  VNC_AUTHENTICATION_CREATE_PARAMETERS_TO_EXECUTABLE(
+      "administrator/vnc/VNCAuthenticationCreateParametersToExecutable.lang"),
+  VNC_PROCESS_CREATOR_DEMO("administrator/io/VNCProcessCreatorDemo.lang");
 
   private String path;
 

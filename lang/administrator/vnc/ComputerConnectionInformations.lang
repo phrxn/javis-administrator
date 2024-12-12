@@ -1,0 +1,6 @@
+<language class="ComputerConnectionInformations">
+	<text key="HOSTNAME_IS_AN_EMPTY_STRING_EXCEPTION" type="Exception">
+		<en_us>The computer name cannot by empty, it must be filled with the computer name or IP</en_us>
+		<pt_br>O nome do computador não pode ser vazio, ele deve ser preenchido com o nome do computador ou ip do mesmo</pt_br>
+	</text>
+</language>

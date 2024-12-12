@@ -1,0 +1,11 @@
+<language class="VNCAuthenticationCreateParametersToExecutable">
+	<text key="GRAMMAR_ERROR_TITLE" type="Error">
+		<en_us>Syntax error</en_us>
+		<pt_br>Erro de sintaxe</pt_br>
+	</text>
+
+	<text key="GRAMMAR_ERROR" type="Error">
+		<en_us>The parameter line syntax for running with VNC authentication is invalid: %s</en_us>
+		<pt_br>A sintaxe da linha de parâmetros para a execução com autenticação VNC é inválida: %s</pt_br>
+	</text>
+</language>

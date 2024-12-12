@@ -40,16 +40,12 @@
 		<pt_br>Detalhes</pt_br>
 	</text>
 	<text key="JMENUITEM_VNC_ACCESS_THE_COMPUTER_ONLY_TO_VIEW" type="Text">
-		<en_us>Automatic (see screen only)</en_us>
-		<pt_br>Automático (ver somente a tela)</pt_br>
+		<en_us>see screen only</en_us>
+		<pt_br>ver somente a tela</pt_br>
 	</text>
 	<text key="JMENUITEM_VNC_ACCESS_THE_COMPUTER_AND_INTERACT" type="Text">
-		<en_us>Automatic (interact using mouse and keyboard)</en_us>
-		<pt_br>Automático (interagir usando mouse e teclado)</pt_br>
-	</text>
-	<text key="JMENUITEM_VNC_ACCESS_THE_COMPUTER_WITH_CREDENTIALS" type="Text">
-		<en_us>Enter access credentials</en_us>
-		<pt_br>Inserir as credenciais de acesso</pt_br>
+		<en_us>interact using mouse and keyboard</en_us>
+		<pt_br>interagir usando mouse e teclado</pt_br>
 	</text>
 	<text key="JMENUITEM_COPY_CELL_CONTENT" type="Text">
 		<en_us>Copy cell content</en_us>

@@ -1,4 +1,4 @@
-package unit.com.quazzom.javis.administrator.persistence;
+package unit.com.quazzom.javis.administrator.persistence.sql_server;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
@@ -7,7 +7,7 @@ import org.mockito.Mockito;
 import com.quazzom.javis.administrator.configuration.GeneralConfiguration;
 import com.quazzom.javis.administrator.configuration.PropertyNotFoundException;
 import com.quazzom.javis.administrator.configuration.SQLServerConnectionInformations;
-import com.quazzom.javis.administrator.persistence.ConnectionFactorySQLServer;
+import com.quazzom.javis.administrator.persistence.sql_server.ConnectionFactorySQLServer;
 
 public class ConnectionFactorySQLServerTest_UnitTest {
 
