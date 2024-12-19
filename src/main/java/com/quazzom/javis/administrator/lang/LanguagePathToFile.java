@@ -23,18 +23,32 @@ public enum LanguagePathToFile {
       "administrator/gui/controllers/VNCComputerListInternalFrameController.lang"),
   JDIALOG_COMPUTER("administrator/gui/dialog/JDialogComputer.lang"),
   JDIALOG_INTERACTION("administrator/gui/dialog/JDialogInteraction.lang"),
-  COMPUTER_PERSISTENCE_SQL_SERVER("administrator/persistence/ComputerPersistenceSQLServer.lang"),
-  COMPUTER_PERSISTENCE_IN_MEMORY("administrator/persistence/ComputerPersistenceInMemory.lang"),
+  COMPUTER_PERSISTENCE_SQL_SERVER(
+      "administrator/persistence/sql_server/ComputerPersistenceSQLServer.lang"),
+  COMPUTER_PERSISTENCE_IN_MEMORY(
+      "administrator/persistence/memory/ComputerPersistenceInMemory.lang"),
   SQL_SERVER_CONNECTION_INFORMATIONS(
       "administrator/configuration/SQLServerConnectionInformations.lang"),
-  CONNECTION_FACTORY_SQL_SERVER("administrator/persistence/ConnectionFactorySQLServer.lang"),
+  CONNECTION_FACTORY_SQL_SERVER(
+      "administrator/persistence/sql_server/ConnectionFactorySQLServer.lang"),
   PROTOCOL_VERSION("administrator/rfb/ProtocolVersion.lang"),
   PROTOCOL_VERSION_NEGOTIATOR("administrator/rfb/ProtocolVersionNegotiator.lang"),
   RFB_SESSION("administrator/rfb/RFBSession.lang"),
   SERVER_SECURITY_TYPE_PROTOCOL_VERSION3_3(
       "administrator/rfb/ServerSecurityTypeProtocolVersion3_3.lang"),
   SERVER_SERCURITY_TYPE_PROTOCOL_VERSIONS(
-      "administrator/rfb/ServerSecurityTypeProtocolVersions.lang");
+      "administrator/rfb/ServerSecurityTypeProtocolVersions.lang"),
+  JDIALOG_VNC_COMPUTER("administrator/gui/dialog/JDialogVNCComputer.lang"),
+  COMPUTER_CONNECTION_INFORMATIONS("administrator/vnc/ComputerConnectionInformations.lang"),
+  TCP_PORT("administrator/net/TCPPort.lang"),
+  VNC_PROGRAM_CONFIGURATION("administrator/vnc/VNCProgramConfiguration.lang"),
+  VNC_CONFIGURATION_JDIALOG_CONTROLLER(
+      "administrator/gui/controllers/VNCConfigurationJDialogController.lang"),
+  VNC_CONFIGURATION_JDIALOG("administrator/gui/dialog/VNCConfigurationJDialog.lang"),
+  JDIALOG_ULTRA_VNC_MS_LOGON_AUTHENTICATION_INPUT(
+      "administrator/gui/dialog/JDialogUltraVNCMslogonAuthenticationInput.lang"),
+  JDIALOG_VNC_AUTHENTICATION_INPUT("administrator/gui/dialog/JDialogVNCAuthenticationInput.lang"),
+  TOKENIZER("administrator/io/parser/Tokenizer.lang");
 
   private String path;
 

@@ -35,6 +35,10 @@ public class LanguageFactory {
   }
 
   public static void setLanguageFrom(LanguageFrom languageFrom) {
+
+    // Once the data source has changed, it is necessary to clear the map so that what has already
+    // been loaded on the map can be reloaded again from the new source.
+    mapLanguage.clear();
     LanguageFactory.languageFrom = languageFrom;
   }
 

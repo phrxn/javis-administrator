@@ -5,8 +5,6 @@ import java.util.Properties;
 
 public class Language implements Text {
 
-  private static final String COMMENT_AND_LANGUAGE_TEXT_SEPARATOR = "\t";
-
   protected Properties propertiesTexts;
 
   public Language() {
