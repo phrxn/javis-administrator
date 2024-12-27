@@ -1,5 +1,6 @@
 package com.quazzom.javis.administrator.vnc;
 
+import java.util.List;
 import com.quazzom.javis.administrator.io.parser.GrammarException;
 import com.quazzom.javis.administrator.io.parser.Parser;
 import com.quazzom.javis.administrator.io.parser.ParserNoAuthentication;
@@ -95,22 +96,26 @@ public class VNCProgramConfiguration {
   }
 
   public void setExecutionLine(String executionLine) throws VNCProgramConfigurationException {
-    if (executionLine.isEmpty()) {
-      throw new VNCProgramConfigurationException(
-          theLanguage.getText("EXECUTION_LINE_EMPTY_STRING_EXCEPTION"));
-    }
+
     if (executionLine.length() > MAX_STRING_SIZE_EXECUTION_LINE) {
       throw new VNCProgramConfigurationException(
           theLanguage.getText(
               "EXECUTION_LINE_SIZE_STRING_EXCEPTION", MAX_STRING_SIZE_EXECUTION_LINE));
     }
 
+    List<String> commandLine;
+
     try {
       Parser parser = new Parser();
-      parser.createCommandLine(executionLine);
+      commandLine = parser.createCommandLine(executionLine);
     } catch (GrammarException e) {
       throw new VNCProgramConfigurationException(
           theLanguage.getText("EXECUTION_LINE_INVALID_SYNTAX_EXCEPTION", e.getMessage()));
+    }
+
+    if (commandLine.isEmpty()) {
+      throw new VNCProgramConfigurationException(
+          theLanguage.getText("EXECUTION_LINE_EMPTY_STRING_EXCEPTION"));
     }
 
     this.executionLine = executionLine;
@@ -127,22 +132,25 @@ public class VNCProgramConfiguration {
       return;
     }
 
-    if (pathToExecutable.isEmpty()) {
-      throw new VNCProgramConfigurationException(
-          theLanguage.getText("PATH_TO_EXECUTABLE_EMPTY_STRING_EXCEPTION"));
-    }
     if (pathToExecutable.length() > MAX_STRING_SIZE_PATH_TO_EXECUTABLE) {
       throw new VNCProgramConfigurationException(
           theLanguage.getText(
               "PATH_TO_EXECUTABLE_SIZE_STRING_EXCEPTION", MAX_STRING_SIZE_PATH_TO_EXECUTABLE));
     }
 
+    List<String> commandLine;
+
     try {
       Parser parser = new Parser();
-      parser.createCommandLine(pathToExecutable);
+      commandLine = parser.createCommandLine(pathToExecutable);
     } catch (GrammarException e) {
       throw new VNCProgramConfigurationException(
           theLanguage.getText("PATH_TO_EXECUTABLE_INVALID_SYNTAX_EXCEPTION", e.getMessage()));
+    }
+
+    if (commandLine.size() == 0) {
+      throw new VNCProgramConfigurationException(
+          theLanguage.getText("PATH_TO_EXECUTABLE_EMPTY_STRING_EXCEPTION"));
     }
 
     this.pathToExecutable = pathToExecutable;

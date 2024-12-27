@@ -79,6 +79,40 @@ public class VNCProgramConfigurationTest_UnitTest {
   }
 
   @Test
+  public void testSetExecutionLine_emptyOnlyWithSpaces() { //  add this test
+
+    // start factory
+    LanguageFactory.setLanguageFrom(LanguageFrom.FILE);
+    LanguageFactory.setLanguageIdiom(LanguageIdiom.EN_US);
+
+    VNCProgramConfiguration vnc = new VNCProgramConfiguration();
+
+    VNCProgramConfigurationException vncEx =
+        assertThrows(
+            VNCProgramConfigurationException.class,
+            () -> {
+              vnc.setExecutionLine("     ");
+            });
+
+    assertEquals("The execution line cannot be empty", vncEx.getMessage());
+  }
+
+  @Test
+  public void testSetExecutionLine_spaceInsideQuotes() { //  add this test
+
+    // start factory
+    LanguageFactory.setLanguageFrom(LanguageFrom.FILE);
+    LanguageFactory.setLanguageIdiom(LanguageIdiom.EN_US);
+
+    VNCProgramConfiguration vnc = new VNCProgramConfiguration();
+
+    assertDoesNotThrow(
+        () -> {
+          vnc.setExecutionLine("\\\"     \\\"");
+        });
+  }
+
+  @Test
   public void testSetExecutionLine_sizeStringExceptionFromLangFile() {
 
     // start factory
@@ -206,6 +240,40 @@ public class VNCProgramConfigurationTest_UnitTest {
     vnc.setPathToExecutable("xxx", false);
 
     assertEquals("aaa", vnc.getPathToExecutable());
+  }
+
+  @Test
+  public void testSetPathToExecutable_emptyOnlyWithSpaces() { //  add this test
+
+    // start factory
+    LanguageFactory.setLanguageFrom(LanguageFrom.FILE);
+    LanguageFactory.setLanguageIdiom(LanguageIdiom.EN_US);
+
+    VNCProgramConfiguration vnc = new VNCProgramConfiguration();
+
+    VNCProgramConfigurationException vncEx =
+        assertThrows(
+            VNCProgramConfigurationException.class,
+            () -> {
+              vnc.setPathToExecutable("     ", true);
+            });
+
+    assertEquals("The path to executable cannot be empty", vncEx.getMessage());
+  }
+
+  @Test
+  public void testSetPathToExecutable_spaceInsideQuotes() { //  add this test
+
+    // start factory
+    LanguageFactory.setLanguageFrom(LanguageFrom.FILE);
+    LanguageFactory.setLanguageIdiom(LanguageIdiom.EN_US);
+
+    VNCProgramConfiguration vnc = new VNCProgramConfiguration();
+
+    assertDoesNotThrow(
+        () -> {
+          vnc.setPathToExecutable("\\\"     \\\"", true);
+        });
   }
 
   // ------------------------------------------------

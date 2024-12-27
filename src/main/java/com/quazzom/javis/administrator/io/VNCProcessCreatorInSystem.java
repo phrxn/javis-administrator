@@ -56,8 +56,7 @@ public class VNCProcessCreatorInSystem implements VNCProcessCreator {
 
     try {
       Parser parser = new Parser();
-      listPathToExecutable =
-          parser.createCommandLine(vncProgramConfiguration.getPathToExecutable());
+      listPathToExecutable = parser.createCommandLine(vncProgramConfiguration.getExecutionLine());
     } catch (GrammarException e) {
       swingMediator.showMessageToUser(
           JDialogType.ERROR,
