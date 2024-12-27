@@ -166,7 +166,7 @@ public class VNCProgramConfiguration {
     int time = 0;
 
     try {
-      time = Integer.valueOf(MAXIMUM_TIMEOUT_VALID_IN_SECONDS);
+      time = Integer.valueOf(timeoutInSecondsToConnection);
     } catch (Exception e) {
       throwInvalidTimeoutValueException();
     }
@@ -368,6 +368,10 @@ public class VNCProgramConfiguration {
       if (other.executionLine != null) return false;
     } else if (!executionLine.equals(other.executionLine)) return false;
     if (id != other.id) return false;
+    if (isToUseChecksum != other.isToUseChecksum) return false;
+    if (name == null) {
+      if (other.name != null) return false;
+    } else if (!name.equals(other.name)) return false;
     if (parameterForInteraction == null) {
       if (other.parameterForInteraction != null) return false;
     } else if (!parameterForInteraction.equals(other.parameterForInteraction)) return false;
@@ -389,12 +393,7 @@ public class VNCProgramConfiguration {
     if (pathToExecutable == null) {
       if (other.pathToExecutable != null) return false;
     } else if (!pathToExecutable.equals(other.pathToExecutable)) return false;
-    if (theLanguage == null) {
-      if (other.theLanguage != null) return false;
-    } else if (!theLanguage.equals(other.theLanguage)) return false;
-    if (name == null) {
-      if (other.name != null) return false;
-    } else if (!name.equals(other.name)) return false;
+    if (timeoutInSecondsToConnection != other.timeoutInSecondsToConnection) return false;
     return true;
   }
 
