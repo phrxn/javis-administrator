@@ -1,0 +1,15 @@
+<language class="ThreadVNCConnection">
+	<text key="connectionFailedTitle" type="Error">
+		<en_us>Connection error</en_us>
+		<pt_br>Erro de conexão</pt_br>
+	</text>
+	<text key="connectionFailedText" type="Error">
+		<en_us>Could not create connection to computer: %s on port: %d. The name or port may be wrong, or the computer may be offline or turned off</en_us>
+		<pt_br>Não foi possível criar a conexão com o computer: %s na porta: %d. O nome ou a porta podem estar errados, o computador pode estar fora da rede ou desligado</pt_br>
+	</text>
+	
+	<text key="listErrorText" type="Error">
+		<en_us>Could not get list of authentication types from vnc client computer: %s</en_us>
+		<pt_br>Não foi possível obter a lista de tipos de autenticação do computador vnc cliente: %s</pt_br>
+	</text>
+</language>

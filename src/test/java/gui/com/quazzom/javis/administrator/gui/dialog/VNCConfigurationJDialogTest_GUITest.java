@@ -10,7 +10,7 @@ import com.quazzom.javis.administrator.lang.LanguageFactory.LanguageFrom;
 import com.quazzom.javis.administrator.lang.LanguageIdiom;
 import com.quazzom.javis.administrator.vnc.VNCProgramConfiguration;
 
-public class VNCConfigurationJDialog_GUITest {
+public class VNCConfigurationJDialogTest_GUITest {
 
   @Test
   public void testVNCConfigurationJDialog() throws InterruptedException {

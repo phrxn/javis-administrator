@@ -1,16 +1,12 @@
 package com.quazzom.javis.administrator.vnc;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 import com.quazzom.javis.administrator.gui.SwingMediator;
-import com.quazzom.javis.administrator.gui.dialog.JDialogType;
 import com.quazzom.javis.administrator.lang.LanguageFactory;
 import com.quazzom.javis.administrator.lang.LanguagePathToFile;
 import com.quazzom.javis.administrator.lang.Text;
 import com.quazzom.javis.administrator.rfb.RFBAuthenticationTypes;
-import com.quazzom.javis.administrator.rfb.RFBProtocolException;
-import com.quazzom.javis.administrator.rfb.RFBSession;
 
 public class VNCAuthenticationNegotiatorNetwork implements VNCAuthenticationNegotiator {
 
@@ -43,19 +39,17 @@ public class VNCAuthenticationNegotiatorNetwork implements VNCAuthenticationNego
 
   @Override
   public Optional<List<RFBAuthenticationTypes>> searchListOfAuthenticationTypesInVNCClient() {
-    RFBSession rfbSession = new RFBSession(computer.getHostName(), computer.getPort());
 
-    List<RFBAuthenticationTypes> listOfClientAuthentications;
+    ThreadSwingJDialogConnectionVNC thread =
+        new ThreadSwingJDialogConnectionVNC(
+            swingMediator, computer, vncProgramConfiguration.getTimeoutInSecondsToConnection());
 
-    try {
-      rfbSession.createConnection(vncProgramConfiguration.getTimeoutInSecondsToConnection() * 1000);
-      listOfClientAuthentications = rfbSession.getListOfAutentication();
-    } catch (RFBProtocolException | IOException e) {
-      swingMediator.showMessageToUser(
-          JDialogType.ERROR, theLanguage.getText("RFB_SESSION_CONNECTION_ERROR"), e.getMessage());
+    List<RFBAuthenticationTypes> listOfClientAuthentications =
+        thread.getListRFBAuthenticationTypes();
+
+    if (listOfClientAuthentications.size() == 0) {
       return Optional.empty();
     }
-
     return Optional.of(listOfClientAuthentications);
   }
 }

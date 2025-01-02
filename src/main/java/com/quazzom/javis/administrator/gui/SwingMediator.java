@@ -137,7 +137,14 @@ public class SwingMediator {
 
     Text language = LanguageFactory.getLanguage(LanguagePathToFile.JDIALOG_MESSAGES);
 
-    swingCommons.showJDialogMessage(administratorFrame, type, title, messageToShow, language);
+    SwingUtilitiesAdministrator sua = new SwingUtilitiesAdministrator();
+
+    // necessary because this method can be called by other threads, in addition
+    // to EventDispatchThread
+    sua.invokeLater(
+        () -> {
+          swingCommons.showJDialogMessage(administratorFrame, type, title, messageToShow, language);
+        });
   }
 
   // -------------- private methods  --------------

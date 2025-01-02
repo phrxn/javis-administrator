@@ -1,0 +1,10 @@
+<language class="ThreadConnectionVNCMonitor">
+	<text key="timeoutTitle" type="Error">
+		<en_us>Connection timeout</en_us>
+		<pt_br>Tempo limite de conexão</pt_br>
+	</text>
+		<text key="timeoutMessage" type="Text">
+		<en_us>The timeout for the vnc client computer to respond to the list of authentication types has expired!</en_us>
+		<pt_br>O tempo limite para o computador vnc cliente responder a lista de tipos de autenticação foi antigido!</pt_br>
+	</text>
+</language>

@@ -41,11 +41,13 @@ public class RFBSession {
     connection = new Socket();
   }
 
-  public void createConnection(int timeoutToReadInMilliseconds) throws IOException {
-    connection.connect(new InetSocketAddress(hostOrIp, port), timeoutToReadInMilliseconds);
-    connection.setSoTimeout(timeoutToReadInMilliseconds);
+  public void createConnection() throws IOException {
+
+    connection.connect(new InetSocketAddress(hostOrIp, port), 0);
+
     inputStream = connection.getInputStream();
     outputStream = connection.getOutputStream();
+
     connectionCreated = true;
   }
 
@@ -70,7 +72,6 @@ public class RFBSession {
   }
 
   public void closeConnection() {
-    if (!connectionCreated) return;
     try {
       connection.close();
       connectionCreated = false;

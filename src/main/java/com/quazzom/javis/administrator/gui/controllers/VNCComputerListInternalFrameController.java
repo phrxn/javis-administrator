@@ -121,7 +121,7 @@ public class VNCComputerListInternalFrameController extends InternalFrameControl
     try {
       cci = new ComputerConnectionInformations("", 0, false);
       createConnectionWithVNCClient(cci);
-    } catch (ComputerConnectionInformationsException | TCPPortException e) {
+    } catch (TCPPortException e) {
       throw new RuntimeException(e.getMessage());
     }
   }
@@ -132,7 +132,7 @@ public class VNCComputerListInternalFrameController extends InternalFrameControl
     try {
       cci = new ComputerConnectionInformations(computer.getHostname(), 0, isOnlyView);
       createConnectionWithVNCClient(cci);
-    } catch (ComputerConnectionInformationsException | TCPPortException e) {
+    } catch (TCPPortException e) {
       throw new RuntimeException(e.getMessage());
     }
   }

@@ -64,7 +64,10 @@ public enum LanguagePathToFile {
       "administrator/vnc/UltraVNCMslogonAuthenticationCreateParametersToExecutable.lang"),
   VNC_AUTHENTICATION_CREATE_PARAMETERS_TO_EXECUTABLE(
       "administrator/vnc/VNCAuthenticationCreateParametersToExecutable.lang"),
-  VNC_PROCESS_CREATOR_DEMO("administrator/io/VNCProcessCreatorDemo.lang");
+  VNC_PROCESS_CREATOR_DEMO("administrator/io/VNCProcessCreatorDemo.lang"),
+  JDIALOG_CONNECTION_VNC("administrator/gui/dialog/JDialogConnectionVNC.lang"),
+  THREAD_CONNECTION_VNC_MONITOR("administrator/vnc/ThreadConnectionVNCMonitor.lang"),
+  THREAD_VNC_CONNECTION("administrator/vnc/ThreadVNCConnection.lang");
 
   private String path;
 

@@ -1,0 +1,14 @@
+<language class="JDialogConnectionVNC">
+	<text key="jPanelRootTitledBorder" type="Text">
+		<en_us>Creating the connection</en_us>
+		<pt_br>Criando a conexão</pt_br>
+	</text>
+	<text key="jButtonCancel" type="Text">
+		<en_us>Cancel</en_us>
+		<pt_br>Cancelar</pt_br>
+	</text>
+	<text key="jLabelTheComputer" type="Text">
+		<en_us>Connecting to the computer: %s</en_us>
+		<pt_br>Se conectando ao computador: %s</pt_br>
+	</text>	
+</language>

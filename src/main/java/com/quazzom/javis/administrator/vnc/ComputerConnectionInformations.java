@@ -14,7 +14,7 @@ public class ComputerConnectionInformations {
   private Text theLanguage;
 
   public ComputerConnectionInformations(String hostName, int port, boolean isOnlyView)
-      throws ComputerConnectionInformationsException, TCPPortException {
+      throws  TCPPortException {
     this(
         hostName,
         port,
@@ -23,8 +23,7 @@ public class ComputerConnectionInformations {
   }
 
   public ComputerConnectionInformations(
-      String hostName, int port, boolean isOnlyView, Text theLanguage)
-      throws ComputerConnectionInformationsException, TCPPortException {
+      String hostName, int port, boolean isOnlyView, Text theLanguage) throws TCPPortException {
     this.hostName = hostName;
     this.tcpPort = new TCPPort(port);
     this.isOnlyView = isOnlyView;
