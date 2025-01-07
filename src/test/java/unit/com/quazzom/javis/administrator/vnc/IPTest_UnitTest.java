@@ -15,6 +15,32 @@ import com.quazzom.javis.administrator.vnc.IPException;
 public class IPTest_UnitTest {
 
   @Test
+  public void testTheConstructorLanguageAndIP_invalidIPText() {
+
+    Text theLanguageMock = Mockito.mock(Text.class);
+    when(theLanguageMock.getText("STRING_IP_SYNTAX_EXCEPTION", "foo")).thenReturn("xxxx");
+
+    IPException ipEx =
+        assertThrows(
+            IPException.class,
+            () -> {
+              new IP(theLanguageMock, "foo");
+            });
+    assertEquals("xxxx", ipEx.getMessage());
+  }
+
+  @Test
+  public void testTheConstructorLanguageAndIP_validIPText() {
+
+    Text theLanguageMock = Mockito.mock(Text.class);
+
+    assertDoesNotThrow(
+        () -> {
+          new IP(theLanguageMock, IP.ANDRESS_NOTHING);
+        });
+  }
+
+  @Test
   public void setIP_emptyString() throws IPException {
 
     Text theLanguageMock = Mockito.mock(Text.class);

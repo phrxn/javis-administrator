@@ -20,8 +20,8 @@ public class IP implements Cloneable {
   }
 
   public IP(Text theLanguage, String ip) throws IPException {
-    setIP(ip);
     this.theLanguage = theLanguage;
+    setIP(ip);
   }
 
   public String getIP() {
