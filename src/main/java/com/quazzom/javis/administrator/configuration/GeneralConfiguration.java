@@ -63,9 +63,10 @@ public class GeneralConfiguration {
     }
   }
 
-  enum StorageTypeOptions implements HasValue {
+  public enum StorageTypeOptions implements HasValue {
     INVALID("?"),
-    SQL_SERVER("SQL_SERVER");
+    SQL_SERVER("SQL_SERVER"),
+    H2("H2");
 
     private final String variableName;
 
@@ -247,8 +248,9 @@ public class GeneralConfiguration {
 
   public void loadConfigurationFromFile() throws IOException, ConfigurationInvalidValueException {
 
-    if (configurationStreamData == null)
+    if (configurationStreamData == null) {
       configurationStreamData = new FileInputStream(pathToConfigurationFile);
+    }
 
     Properties properties = new Properties();
     properties.load(configurationStreamData);

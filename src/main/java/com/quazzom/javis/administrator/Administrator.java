@@ -6,7 +6,7 @@ import com.quazzom.javis.administrator.vnc.VNCAuthentication;
 public class Administrator {
 
   private static final String PROGRAM_NAME = "Javis administrator";
-  private static final String PROGRAM_VERSION = "0.2.2";
+  private static final String PROGRAM_VERSION = "0.4.0-rc";
 
   private String strProgramName;
   private String strProgramVersion;

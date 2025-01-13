@@ -1,0 +1,14 @@
+<language class="ComputerPersistenceSQLServer">
+	<text key="CREATE_COMPUTER_COMPUTER_ALREADY_EXIST_EXCEPTION" type="Exception">
+		<en_us>A computer with hostname: %s, and ip: %s, already exists. Existing information has been updated</en_us>
+		<pt_br>Um computador com o nome: %s, e IP: %s, já existe. As informações já existentes foram atualizadas</pt_br>
+	</text>
+	<text key="UNEXPECTED_ERROR_EXCEPTION" type="Exception">
+		<en_us>An unexpected error occurred</en_us>
+		<pt_br>Um erro inesperado ocorreu</pt_br>
+	</text>
+	<text key="FIND_BY_ID_NOT_FOUND_EXCEPTION" type="Exception">
+		<en_us>No computer with ID %d was found in the database</en_us>
+		<pt_br>Nenhum computador com o ID %d foi encontrado no banco de dados</pt_br>
+	</text>
+</language>

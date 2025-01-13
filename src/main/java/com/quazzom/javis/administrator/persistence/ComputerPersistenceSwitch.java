@@ -2,6 +2,8 @@ package com.quazzom.javis.administrator.persistence;
 
 import java.util.List;
 import com.quazzom.javis.administrator.configuration.GeneralConfiguration;
+import com.quazzom.javis.administrator.persistence.h2.ComputerPersistenceH2;
+import com.quazzom.javis.administrator.persistence.h2.ConnectionFactoryH2;
 import com.quazzom.javis.administrator.persistence.memory.ComputerPersistenceInMemory;
 import com.quazzom.javis.administrator.persistence.sql_server.ComputerPersistenceSQLServer;
 import com.quazzom.javis.administrator.persistence.sql_server.ConnectionFactorySQLServer;
@@ -15,9 +17,16 @@ public class ComputerPersistenceSwitch implements ComputerPersistence {
     if (generalConfiguration.getExecutionMode() == GeneralConfiguration.ExecutionModeOptions.DEMO)
       computerPersistenceImp = new ComputerPersistenceInMemory();
     else if (generalConfiguration.getExecutionMode()
-        == GeneralConfiguration.ExecutionModeOptions.NORMAL)
-      computerPersistenceImp =
-          new ComputerPersistenceSQLServer(new ConnectionFactorySQLServer(generalConfiguration));
+        == GeneralConfiguration.ExecutionModeOptions.NORMAL) {
+      if (generalConfiguration.getStorageType()
+          == GeneralConfiguration.StorageTypeOptions.SQL_SERVER) {
+        computerPersistenceImp =
+            new ComputerPersistenceSQLServer(new ConnectionFactorySQLServer(generalConfiguration));
+      } else {
+        computerPersistenceImp =
+            new ComputerPersistenceH2(new ConnectionFactoryH2(generalConfiguration));
+      }
+    }
   }
 
   @Override

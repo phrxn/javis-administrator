@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.quazzom.javis</groupId>
 	<artifactId>administrator</artifactId>
-	<version>0.3.0-rc</version>
+	<version>0.4.0-rc</version>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -48,6 +48,12 @@
 			<groupId>com.microsoft.sqlserver</groupId>
 			<artifactId>mssql-jdbc</artifactId>
 			<version>12.8.1.jre11</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>2.2.224</version>
 		</dependency>
 
 
@@ -120,7 +126,8 @@
 					<descriptorRefs>
 						<descriptorRef>jar-with-dependencies</descriptorRef>
 					</descriptorRefs>
-					<appendAssemblyId>false</appendAssemblyId> <!-- disable jar with depencies -->
+					<appendAssemblyId>false</appendAssemblyId> <!-- disable jar
+					with depencies -->
 					<outputDirectory>${basedir}/output/binary/${project.version}</outputDirectory>
 				</configuration>
 				<executions>

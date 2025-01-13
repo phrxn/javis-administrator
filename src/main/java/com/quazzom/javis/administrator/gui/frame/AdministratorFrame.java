@@ -70,6 +70,11 @@ public class AdministratorFrame extends JFrame {
   class JFrameControl extends WindowAdapter {
     @Override
     public void windowClosing(WindowEvent e) {
+
+      // if any error occurs in loading configuration controllersMediator will be null
+      if (controllersMediator == null) {
+        System.exit(1);
+      }
       controllersMediator.showExitProgram();
     }
   }

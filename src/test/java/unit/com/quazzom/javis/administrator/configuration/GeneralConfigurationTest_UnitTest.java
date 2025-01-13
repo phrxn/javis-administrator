@@ -133,6 +133,11 @@ public class GeneralConfigurationTest_UnitTest {
         () -> {
           gc.setStorageType("SQL_SERVER");
         });
+
+    assertDoesNotThrow(
+        () -> {
+          gc.setStorageType("H2");
+        });
   }
 
   // ------------------------------------------------------------------------------------------------------

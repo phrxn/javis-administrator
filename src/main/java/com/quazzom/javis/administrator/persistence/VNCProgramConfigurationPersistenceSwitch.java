@@ -2,6 +2,8 @@ package com.quazzom.javis.administrator.persistence;
 
 import java.util.Optional;
 import com.quazzom.javis.administrator.configuration.GeneralConfiguration;
+import com.quazzom.javis.administrator.persistence.h2.ConnectionFactoryH2;
+import com.quazzom.javis.administrator.persistence.h2.VNCProgramConfigurationPersistenceH2;
 import com.quazzom.javis.administrator.persistence.memory.VNCProgramConfigurationPersistenceInMemory;
 import com.quazzom.javis.administrator.persistence.sql_server.ConnectionFactorySQLServer;
 import com.quazzom.javis.administrator.persistence.sql_server.VNCProgramConfigurationPersistenceSQLServer;
@@ -17,9 +19,15 @@ public class VNCProgramConfigurationPersistenceSwitch
       vncProgramConfigurationPersistence = new VNCProgramConfigurationPersistenceInMemory();
     else if (generalConfiguration.getExecutionMode()
         == GeneralConfiguration.ExecutionModeOptions.NORMAL) {
-      vncProgramConfigurationPersistence =
-          new VNCProgramConfigurationPersistenceSQLServer(
-              new ConnectionFactorySQLServer(generalConfiguration));
+      if (generalConfiguration.getStorageType()
+          == GeneralConfiguration.StorageTypeOptions.SQL_SERVER) {
+        vncProgramConfigurationPersistence =
+            new VNCProgramConfigurationPersistenceSQLServer(
+                new ConnectionFactorySQLServer(generalConfiguration));
+      } else {
+        vncProgramConfigurationPersistence =
+            new VNCProgramConfigurationPersistenceH2(new ConnectionFactoryH2(generalConfiguration));
+      }
     }
   }
 
