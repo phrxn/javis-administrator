@@ -54,9 +54,9 @@ public class ComputerPersistenceSQLServer_IntegrationTest {
           Computer secondComputerReturn = cps.createComputer(secondComputer);
           Computer thirdComputerReturn = cps.createComputer(thirdComputer);
 
-          assertEquals(firstComputerReturn.getId(), 1);
-          assertEquals(secondComputerReturn.getId(), 2);
-          assertEquals(thirdComputerReturn.getId(), 3);
+          assertEquals(1, firstComputerReturn.getId());
+          assertEquals(2, secondComputerReturn.getId());
+          assertEquals(3, thirdComputerReturn.getId());
         });
   }
 
