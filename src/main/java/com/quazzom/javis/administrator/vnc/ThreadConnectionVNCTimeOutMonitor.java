@@ -40,9 +40,10 @@ public class ThreadConnectionVNCTimeOutMonitor implements Runnable {
   }
 
   public void start() {
-    threadVNCConnection = new ThreadConnectionVNCToGetAuthenticationList(mutexConnectionVNCMonitor, computerInfos);
+    threadVNCConnection =
+        new ThreadConnectionVNCToGetAuthenticationList(mutexConnectionVNCMonitor, computerInfos);
     threadVNCConnection.start();
-    Thread t = new Thread(this, "ThreadConnectionVNCMonitor");
+    Thread t = new Thread(this, "ThreadConnectionVNCTimeOutMonitor");
     t.start();
   }
 

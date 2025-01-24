@@ -23,7 +23,8 @@ public class ThreadConnectionVNCToGetAuthenticationList implements Runnable {
     this(
         mutexConnectionVNCMonitor,
         computerInfos,
-        LanguageFactory.getLanguage(LanguagePathToFile.THREAD_CONNECTION_VNC_TO_GET_AUTHENTICATION_LIST));
+        LanguageFactory.getLanguage(
+            LanguagePathToFile.THREAD_CONNECTION_VNC_TO_GET_AUTHENTICATION_LIST));
   }
 
   public ThreadConnectionVNCToGetAuthenticationList(
@@ -37,7 +38,7 @@ public class ThreadConnectionVNCToGetAuthenticationList implements Runnable {
   }
 
   public void start() {
-    Thread t = new Thread(this, "ThreadConnectionVNCMonitor");
+    Thread t = new Thread(this, "ThreadConnectionVNCToGetAuthenticationList");
     t.start();
   }
 
