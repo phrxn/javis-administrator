@@ -27,4 +27,8 @@ public class SwingUtilitiesAdministrator {
   public void invokeLater(final Runnable runnable) {
     SwingUtilities.invokeLater(runnable);
   }
+
+  public boolean isEventDispatchThread() {
+    return SwingUtilities.isEventDispatchThread();
+  }
 }

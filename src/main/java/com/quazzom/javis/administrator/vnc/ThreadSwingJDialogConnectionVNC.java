@@ -22,22 +22,20 @@ public class ThreadSwingJDialogConnectionVNC {
 
   public List<RFBAuthenticationTypes> getListRFBAuthenticationTypes() {
 
-    List<RFBAuthenticationTypes> listRFBAuthenticationTypes = null;
-
     JDialogConnectionVNC jDialogConnectionVNC =
         new JDialogConnectionVNC(swingMediator.getJFrameAdministratorFrame(), true, computerInfos);
-    MutexConnectionVNCMonitor mutexConnection = new MutexConnectionVNCMonitor(jDialogConnectionVNC);
+    MutexConnectionVNCMonitor mutexConnection =
+        new MutexConnectionVNCMonitor(jDialogConnectionVNC, swingMediator);
     jDialogConnectionVNC.setMutexConnectionVNCMonitor(mutexConnection);
 
-    ThreadConnectionVNCMonitor threadConnectionVNCMonitor =
-        new ThreadConnectionVNCMonitor(
-            mutexConnection, swingMediator, computerInfos, connectionTimoutInSeconds);
-    threadConnectionVNCMonitor.start();
+    ThreadConnectionVNC threadConnectionVNC =
+        new ThreadConnectionVNC(mutexConnection, computerInfos, connectionTimoutInSeconds);
+    threadConnectionVNC.start();
 
-    jDialogConnectionVNC.setVisible(true);
+    if (mutexConnection.isConnectionRunning()) {
+      jDialogConnectionVNC.setVisible(true);
+    }
 
-    listRFBAuthenticationTypes = mutexConnection.getListAuthentication();
-
-    return listRFBAuthenticationTypes;
+    return mutexConnection.getListAuthentication();
   }
 }

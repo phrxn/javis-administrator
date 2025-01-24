@@ -66,8 +66,10 @@ public enum LanguagePathToFile {
       "administrator/vnc/VNCAuthenticationCreateParametersToExecutable.lang"),
   VNC_PROCESS_CREATOR_DEMO("administrator/io/VNCProcessCreatorDemo.lang"),
   JDIALOG_CONNECTION_VNC("administrator/gui/dialog/JDialogConnectionVNC.lang"),
-  THREAD_CONNECTION_VNC_MONITOR("administrator/vnc/ThreadConnectionVNCMonitor.lang"),
-  THREAD_VNC_CONNECTION("administrator/vnc/ThreadVNCConnection.lang"),
+  THREAD_CONNECTION_VNC_TIME_OUT_MONITOR(
+      "administrator/vnc/ThreadConnectionVNCTimeOutMonitor.lang"),
+  THREAD_CONNECTION_VNC_TO_GET_AUTHENTICATION_LIST(
+      "administrator/vnc/ThreadConnectionVNCToGetAuthenticationList.lang"),
   COMPUTER_PERSISTENCE_H2("administrator/persistence/h2/ComputerPersistenceH2.lang");
 
   private String path;

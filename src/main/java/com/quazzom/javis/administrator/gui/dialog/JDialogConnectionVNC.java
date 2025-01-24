@@ -20,8 +20,6 @@ import com.quazzom.javis.administrator.vnc.MutexConnectionVNCMonitor;
 
 public class JDialogConnectionVNC extends JDialogDefault {
 
-  private Object mutexVisibility = new Object();
-  private boolean isDisposed = false;
   private MutexConnectionVNCMonitor mutexConnectionVNCMonitor;
 
   private ComputerConnectionInformations computerInfos;
@@ -91,24 +89,6 @@ public class JDialogConnectionVNC extends JDialogDefault {
 
   public void setMutexConnectionVNCMonitor(MutexConnectionVNCMonitor mutexConnectionVNCMonitor) {
     this.mutexConnectionVNCMonitor = mutexConnectionVNCMonitor;
-  }
-
-  @Override
-  public void setVisible(boolean b) {
-    synchronized (mutexVisibility) {
-      if (isDisposed) {
-        return;
-      }
-    }
-    super.setVisible(b);
-  }
-
-  @Override
-  public void dispose() {
-    synchronized (mutexVisibility) {
-      isDisposed = true;
-      super.dispose();
-    }
   }
 
   private class WindowsEvents extends WindowAdapter {
