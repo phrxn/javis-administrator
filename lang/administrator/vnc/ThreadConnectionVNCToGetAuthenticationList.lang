@@ -5,7 +5,7 @@
 	</text>
 	<text key="connectionFailedText" type="Error">
 		<en_us>Could not create connection to computer: %s on port: %d. The name or port may be wrong, or the computer may be offline or turned off</en_us>
-		<pt_br>Não foi possível criar a conexão com o computer: %s na porta: %d. O nome ou a porta podem estar errados, o computador pode estar fora da rede ou desligado</pt_br>
+		<pt_br>Não foi possível criar a conexão com o computador: %s na porta: %d. O nome ou a porta podem estar errados, o computador pode estar fora da rede ou desligado</pt_br>
 	</text>
 	
 	<text key="listErrorText" type="Error">
