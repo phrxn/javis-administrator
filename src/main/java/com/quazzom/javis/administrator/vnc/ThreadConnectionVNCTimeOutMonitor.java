@@ -7,7 +7,7 @@ import com.quazzom.javis.administrator.lang.Text;
 
 public class ThreadConnectionVNCTimeOutMonitor implements Runnable {
 
-  private MutexConnectionVNCMonitor mutexConnectionVNCMonitor;
+  private MutexConnectionVNC mutexConnectionVNCMonitor;
   private ComputerConnectionInformations computerInfos;
   private int connectionTimoutInSeconds;
   private long startTime;
@@ -17,7 +17,7 @@ public class ThreadConnectionVNCTimeOutMonitor implements Runnable {
   private Text theLanguage;
 
   public ThreadConnectionVNCTimeOutMonitor(
-      MutexConnectionVNCMonitor mutexConnectionVNCMonitor,
+      MutexConnectionVNC mutexConnectionVNCMonitor,
       ComputerConnectionInformations computerInfos,
       int connectionTimoutInSeconds) {
     this(
@@ -28,7 +28,7 @@ public class ThreadConnectionVNCTimeOutMonitor implements Runnable {
   }
 
   public ThreadConnectionVNCTimeOutMonitor(
-      MutexConnectionVNCMonitor mutexConnectionVNCMonitor,
+      MutexConnectionVNC mutexConnectionVNCMonitor,
       ComputerConnectionInformations computerInfos,
       int connectionTimoutInSeconds,
       Text theLanguage) {

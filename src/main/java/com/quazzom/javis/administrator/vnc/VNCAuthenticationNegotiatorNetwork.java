@@ -40,8 +40,8 @@ public class VNCAuthenticationNegotiatorNetwork implements VNCAuthenticationNego
   @Override
   public Optional<List<RFBAuthenticationTypes>> searchListOfAuthenticationTypesInVNCClient() {
 
-    ThreadSwingJDialogConnectionVNC thread =
-        new ThreadSwingJDialogConnectionVNC(
+    ConnectionVNCToGetAuthenticationList thread =
+        new ConnectionVNCToGetAuthenticationList(
             swingMediator, computer, vncProgramConfiguration.getTimeoutInSecondsToConnection());
 
     List<RFBAuthenticationTypes> listOfClientAuthentications =

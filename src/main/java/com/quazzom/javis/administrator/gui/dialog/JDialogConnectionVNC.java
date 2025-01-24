@@ -16,11 +16,11 @@ import com.quazzom.javis.administrator.lang.LanguageFactory;
 import com.quazzom.javis.administrator.lang.LanguagePathToFile;
 import com.quazzom.javis.administrator.lang.Text;
 import com.quazzom.javis.administrator.vnc.ComputerConnectionInformations;
-import com.quazzom.javis.administrator.vnc.MutexConnectionVNCMonitor;
+import com.quazzom.javis.administrator.vnc.MutexConnectionVNC;
 
 public class JDialogConnectionVNC extends JDialogDefault {
 
-  private MutexConnectionVNCMonitor mutexConnectionVNCMonitor;
+  private MutexConnectionVNC mutexConnectionVNCMonitor;
 
   private ComputerConnectionInformations computerInfos;
 
@@ -87,7 +87,7 @@ public class JDialogConnectionVNC extends JDialogDefault {
     addWindowListener(new WindowsEvents());
   }
 
-  public void setMutexConnectionVNCMonitor(MutexConnectionVNCMonitor mutexConnectionVNCMonitor) {
+  public void setMutexConnectionVNCMonitor(MutexConnectionVNC mutexConnectionVNCMonitor) {
     this.mutexConnectionVNCMonitor = mutexConnectionVNCMonitor;
   }
 

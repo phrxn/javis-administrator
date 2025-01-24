@@ -12,13 +12,13 @@ import com.quazzom.javis.administrator.rfb.RFBSession;
 
 public class ThreadConnectionVNCToGetAuthenticationList implements Runnable {
 
-  private MutexConnectionVNCMonitor mutexConnectionVNCMonitor;
+  private MutexConnectionVNC mutexConnectionVNCMonitor;
   private RFBSession rfbSession;
   private Text theLanguage;
   private ComputerConnectionInformations computerInfos;
 
   public ThreadConnectionVNCToGetAuthenticationList(
-      MutexConnectionVNCMonitor mutexConnectionVNCMonitor,
+      MutexConnectionVNC mutexConnectionVNCMonitor,
       ComputerConnectionInformations computerInfos) {
     this(
         mutexConnectionVNCMonitor,
@@ -28,7 +28,7 @@ public class ThreadConnectionVNCToGetAuthenticationList implements Runnable {
   }
 
   public ThreadConnectionVNCToGetAuthenticationList(
-      MutexConnectionVNCMonitor mutexConnectionVNCMonitor,
+      MutexConnectionVNC mutexConnectionVNCMonitor,
       ComputerConnectionInformations computerInfos,
       Text theLanguage) {
     this.mutexConnectionVNCMonitor = mutexConnectionVNCMonitor;

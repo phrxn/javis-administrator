@@ -5,13 +5,13 @@ import com.quazzom.javis.administrator.gui.SwingMediator;
 import com.quazzom.javis.administrator.gui.dialog.JDialogConnectionVNC;
 import com.quazzom.javis.administrator.rfb.RFBAuthenticationTypes;
 
-public class ThreadSwingJDialogConnectionVNC {
+public class ConnectionVNCToGetAuthenticationList {
 
   private SwingMediator swingMediator;
   private ComputerConnectionInformations computerInfos;
   private int connectionTimoutInSeconds;
 
-  public ThreadSwingJDialogConnectionVNC(
+  public ConnectionVNCToGetAuthenticationList(
       SwingMediator swingMediator,
       ComputerConnectionInformations computerInfos,
       int connectionTimoutInSeconds) {
@@ -24,12 +24,12 @@ public class ThreadSwingJDialogConnectionVNC {
 
     JDialogConnectionVNC jDialogConnectionVNC =
         new JDialogConnectionVNC(swingMediator.getJFrameAdministratorFrame(), true, computerInfos);
-    MutexConnectionVNCMonitor mutexConnection =
-        new MutexConnectionVNCMonitor(jDialogConnectionVNC, swingMediator);
+    MutexConnectionVNC mutexConnection =
+        new MutexConnectionVNC(jDialogConnectionVNC, swingMediator);
     jDialogConnectionVNC.setMutexConnectionVNCMonitor(mutexConnection);
 
-    ThreadConnectionVNC threadConnectionVNC =
-        new ThreadConnectionVNC(mutexConnection, computerInfos, connectionTimoutInSeconds);
+    ConnectionVNC threadConnectionVNC =
+        new ConnectionVNC(mutexConnection, computerInfos, connectionTimoutInSeconds);
     threadConnectionVNC.start();
 
     if (mutexConnection.isConnectionRunning()) {

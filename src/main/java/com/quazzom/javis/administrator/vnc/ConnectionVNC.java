@@ -1,11 +1,11 @@
 package com.quazzom.javis.administrator.vnc;
 
-public class ThreadConnectionVNC {
+public class ConnectionVNC {
 
   private ThreadConnectionVNCTimeOutMonitor threadConnectionVNCTimeOutMonitor;
 
-  public ThreadConnectionVNC(
-      MutexConnectionVNCMonitor mutexConnectionVNCMonitor,
+  public ConnectionVNC(
+      MutexConnectionVNC mutexConnectionVNCMonitor,
       ComputerConnectionInformations computerInfos,
       int connectionTimoutInSeconds) {
 

@@ -11,7 +11,7 @@ import com.quazzom.javis.administrator.lang.Text;
 import com.quazzom.javis.administrator.net.TCPPortException;
 import com.quazzom.javis.administrator.vnc.ComputerConnectionInformations;
 import com.quazzom.javis.administrator.vnc.ComputerConnectionInformationsException;
-import com.quazzom.javis.administrator.vnc.MutexConnectionVNCMonitor;
+import com.quazzom.javis.administrator.vnc.MutexConnectionVNC;
 
 public class JDialogVNCAccessLoadTest_GUITest {
 
@@ -28,7 +28,7 @@ public class JDialogVNCAccessLoadTest_GUITest {
     when(theLanguageMock.getText(anyString())).thenReturn("XXXX");
     when(theLanguageMock.getText(anyString(), anyString())).thenReturn("XXXX");
 
-    MutexConnectionVNCMonitor mutexConnectionMock = Mockito.mock(MutexConnectionVNCMonitor.class);
+    MutexConnectionVNC mutexConnectionMock = Mockito.mock(MutexConnectionVNC.class);
     doNothing().when(mutexConnectionMock).stopConnection();
 
     JDialogConnectionVNC jdm = new JDialogConnectionVNC(null, true, computerInfos, theLanguageMock);

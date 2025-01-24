@@ -8,7 +8,7 @@ import com.quazzom.javis.administrator.gui.dialog.JDialogConnectionVNC;
 import com.quazzom.javis.administrator.gui.dialog.JDialogType;
 import com.quazzom.javis.administrator.rfb.RFBAuthenticationTypes;
 
-public class MutexConnectionVNCMonitor {
+public class MutexConnectionVNC {
 
   private JDialogConnectionVNC jDialogConnectionVNC;
   private Object mutex = new Object();
@@ -22,7 +22,7 @@ public class MutexConnectionVNCMonitor {
 
   private SwingMediator swingMediator;
 
-  public MutexConnectionVNCMonitor(
+  public MutexConnectionVNC(
       JDialogConnectionVNC jDialogConnectionVNC, SwingMediator swingMediator) {
     this.jDialogConnectionVNC = jDialogConnectionVNC;
     this.swingMediator = swingMediator;
