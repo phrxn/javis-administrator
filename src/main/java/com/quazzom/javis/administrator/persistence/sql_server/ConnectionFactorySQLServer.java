@@ -18,7 +18,7 @@ public class ConnectionFactorySQLServer implements ConnectionFactory {
 
   public static final String pathToConnectionInformations = "config/SQLServerConnection.properties";
   public static final String pathToConnectionInformationsTest =
-      "config/SQLServerConnection.properties";
+      "config/SQLServerConnectionTest.properties";
 
   private SQLServerConnectionInformations sqlConnectionInfos;
 
