@@ -2,7 +2,7 @@
 
 ### Javis administrator:
 
-Javis administrator is one of the programs of the Jarvis project. It is responsible for displaying the list of computers to access VNC.
+Javis administrator is one of the programs of the Javis project. It is responsible for displaying the list of computers to access VNC.
 This program is a GUI that runs on the Desktop, it uses Java swing to render its components.
 
 [![showroom](https://raw.githubusercontent.com/phrxn/phrxn/refs/heads/master/javis/administrator/showroom.gif)](https://raw.githubusercontent.com/phrxn/phrxn/refs/heads/master/javis/administrator/showroom.gif)
